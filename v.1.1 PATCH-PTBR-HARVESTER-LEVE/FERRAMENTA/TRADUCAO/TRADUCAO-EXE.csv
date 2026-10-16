@@ -30,3 +30,17 @@
 0xF521D,70,opcao de dialogo fixa no EXE (/ separa opcoes),Mr. Moynahan says you were out and/   about the night she disappeared.,O Sr. Moynahan diz que voce saiu/   na noite em que ela sumiu.
 0xF5270,59,opcao de dialogo fixa no EXE (/ separa opcoes),I found one of our wedding match-/   books in the cemetary.,Achei uma caixa de fosforos do/   casamento no cemiterio.
 0xF6587,36,opcao de dialogo fixa no EXE (/ separa opcoes),1. I'd like that./2. I'd rather not.,1. Eu gostaria./2. Prefiro nao.
+0x100669,5,menu de opcoes: sufixo ligado, - On, -Sim
+0x100676,5,menu de opcoes: sufixo ligado, - On, -Sim
+0x10066F,6,menu de opcoes: sufixo desligado, - Off, -Nao
+0x10067C,6,menu de opcoes: sufixo desligado, - Off, -Nao
+0xF2DF7,16,calibracao do joystick,MOVE JOYSTICK TO,MOVA O JOYSTICK
+0xF2E0E,16,calibracao do joystick,MOVE JOYSTICK TO,MOVA O JOYSTICK
+0xF2E1F,16,calibracao do joystick,AND PRESS BUTTON,E APERTE O BOTAO
+0xF2E38,16,calibracao do joystick,AND PRESS BUTTON,E APERTE O BOTAO
+0x1054AC,8,calibracao do joystick (direcao),THE LEFT,ESQUERDA
+0x1054BB,9,calibracao do joystick (direcao),THE RIGHT,DIREITA
+0x1054CA,7,calibracao do joystick (direcao),THE TOP,CIMA
+0x1054D9,10,calibracao do joystick (direcao),THE BOTTOM,BAIXO
+0xFBD3E,23,aviso de CD,CD-ROM DRIVE NOT READY!,DRIVE DE CD NAO PRONTO!
+0xFBD63,19,aviso de CD,PLEASE TRY AGAIN...,TENTE DE NOVO...

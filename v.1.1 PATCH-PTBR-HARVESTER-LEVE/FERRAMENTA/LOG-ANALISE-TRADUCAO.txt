@@ -1,0 +1,1038 @@
+LOG DE ANALISE - TRADUCAO DO HARVESTER
+Data: 15/10/2026
+Pasta do jogo: HARVEST
+
+OBJETIVO
+Localizar arquivos de dialogo e outros textos em ingles que aparecem durante
+o jogo, para avaliar a possibilidade de jogar em portugues.
+
+O QUE FOI INSPECIONADO
+
+1. HARVEST\DIALOG.RSP
+   - Arquivo de texto legivel, com 806 linhas e aproximadamente 26 KB.
+   - Contem numerosas falas, respostas selecionaveis, nomes de personagens
+     e locais, alem de alguns textos de menus e mensagens.
+   - Exemplos encontrados: "I don't have anything.../Go to Hell!",
+     "Who are you?/Who am I?/Where am I?" e "START A NEW GAME?".
+   - Este e o principal arquivo de dialogos localizado ate agora.
+
+2. HARVEST\MENU.INI
+   - Arquivo pequeno, com 18 linhas.
+   - Contem nomes de opcoes e comandos do menu, como NEW GAME, SAVE GAME,
+     LOAD GAME, OPTIONS, HELP e QUIT GAME.
+   - DIALOG.RSP tambem contem textos relacionados a menus; portanto, os dois
+     arquivos devem ser considerados em qualquer trabalho de localizacao.
+
+3. HARVEST\HARVEST.EXE
+   - O executavel contem algumas strings legiveis embutidas, incluindo
+     mensagens do programa e comandos contextuais como "Examine the %s",
+     "Pick up the %s" e "Use %s on %s".
+   - Uma busca por texto revelou tambem algumas strings aparentemente ligadas
+     a cenas ou recursos do jogo. Nao foi feita uma inventariacao completa nem
+     qualquer alteracao no executavel.
+
+4. HARVEST\HARVEST2.DAT
+   - Arquivo de dados de aproximadamente 19,7 MB.
+   - A busca simples por sequencias de texto nao revelou um catalogo legivel
+     de dialogos; o conteudo parece ser composto majoritariamente por dados
+     de recursos/formatos proprios do jogo. Uma busca simples nao prova que
+     nao existam textos nesse arquivo.
+
+5. HARVEST_CD\HARVESTER_DISC1.ISO,
+   HARVEST_CD\HARVESTER_DISC2.ISO e HARVEST_CD\HARVESTER_DISC3.ISO
+   - O indice de diretorios ISO9660 foi lido sem extrair ou alterar os discos.
+   - Foram encontrados 330 arquivos no disco 1, 135 no disco 2 e 112 no disco
+     3. Ha recursos em pastas como GRAPHIC, alem de arquivos de dados e som.
+   - O disco 1 contem DIALOG.RSP, MENU.INI, HARVEST.EXE, HARVEST.SCR,
+     HARVEST.DAT, HARVEST2.DAT e SOUND.DAT. O disco 2 contem copias de
+     HARVEST.DAT, HARVEST.SCR e HARVEST2.DAT. O disco 3 contem outra versao
+     de HARVEST.DAT e HARVEST.SCR e uma copia de HARVEST2.DAT.
+   - O DIALOG.RSP instalado e identico ao do disco 1 (26.325 bytes). O disco
+     3 tem uma variante de 26.098 bytes: 783 linhas nao vazias, contra 806
+     no arquivo instalado. A variante do disco 3 nao e identica e precisa ser
+     entendida antes de decidir qual arquivo e usado em cada parte do jogo.
+   - As copias de HARVEST2.DAT nos tres discos sao identicas (19.683.064
+     bytes). HARVEST.DAT tem 73.639.698 bytes nos discos 1 e 2, e
+     127.704.762 bytes no disco 3. Os arquivos HARVEST.SCR tambem diferem
+     entre o disco 3 e os discos 1/2.
+
+6. HARVEST\README.TXT e arquivos de configuracao
+   - O README e configuracoes foram consultados para identificar caminhos e
+     contexto de execucao. Nenhuma instrucao de localizacao foi identificada
+     na inspecao feita.
+
+MAPA TECNICO INICIAL DO CARREGAMENTO
+- HARVEST\CONFIG.INI seleciona TEXT=YES e TOWN=HARVEST.SCR.
+- A mesma configuracao aponta DRIVE_1 para D:\harvest.dat e DRIVE_2 para
+  D:\sound.dat (o drive D e montado pelo DOSBox como os tres CDs).
+- DRIVE_3 aponta para C:\HARVEST\harvest2.dat, o arquivo de dados local.
+- Os arquivos de inicializacao do DOSBox montam o diretorio do jogo em C:
+  e as tres imagens de CD em D:. Assim, recursos do CD podem ser carregados
+  durante o jogo e nao aparecem necessariamente como arquivos soltos na
+  pasta HARVEST.
+- A busca simples por sequencias de texto em HARVEST.SCR e nos arquivos DAT
+  nao encontrou falas legiveis em quantidade significativa. Isso nao prova
+  que nao existam textos codificados, comprimidos ou armazenados em tabelas
+  dentro desses arquivos.
+- Os CDs incluem formatos de recursos como CMP, FST, BM, CFT, ABM, PCX e
+  FLC. Alguns podem ser graficos ou animacoes com palavras desenhadas na
+  imagem, algo que nao seria traduzido editando DIALOG.RSP.
+- SOUND.DAT armazena recursos de som. Falas faladas em ingles nao se tornam
+  portugues ao traduzir os textos; uma localizacao completa teria de tratar
+  tambem as vozes e verificar filmes/animacoes.
+- HARVEST.EXE contem alguns textos fixos do jogo, inclusive rotulos para
+  acoes contextuais. Nao foi feita alteracao do executavel.
+- Uma busca por nomes de arquivo no HARVEST.EXE encontrou as strings
+  DIALOG.RSP (offset de arquivo 0xFAAB1), MENU.INI (0xFFC2C), HARVEST.DAT
+  (0xFBDC9), SOUND.DAT (0xFBDEE) e HARVEST2.DAT (0xFBE11), alem do rotulo
+  DRIVE_1 (0xFBDD5). Esses sao offsets no arquivo executavel, nao enderecos
+  de memoria. A presenca das strings indica referencias candidatas, mas nao
+  substitui a analise do codigo que as utiliza.
+- O executavel instalado e o executavel no disco 1 foram comparados e sao
+  identicos. O MENU.INI instalado tambem e identico ao do disco 1.
+
+RASTREAMENTO ESTATICO E RECURSOS DE TELA
+- O DOSBox monta o diretorio local como C:, monta as tres ISOs em sequencia
+  como D: e inicia HARVEST.EXE a partir de C:\HARVEST.
+- No executavel, foram confirmadas strings de abertura de dialog.rsp e a
+  mensagem "unable to open file: dialog.rsp" (offsets de arquivo 0xFAAB1 e
+  0xFAABC). Tambem aparecem nomes de menu.ini, configuracoes de arquivos de
+  dados por areas chamadas TOWN1, TOWN2 e LODGE, e comandos da interface como
+  "Use %s on %s", "Examine the %s" e "Pick up the %s".
+- O executavel contem referencias a recursos graficos e sonoros individuais,
+  incluindo GRAPHIC/FST, arquivos .BM/.ABM e caminhos SOUND/EFFECTS/*.WAV.
+  Ha caminhos de desenvolvimento G:\HARVFNL\TOWN1, TOWN2 e LODGE, alem de
+  referencias D:\TOWN1; ainda nao se confirmou por execucao quais desses
+  caminhos sao usados na versao distribuida. Nao se deve tratar cada string
+  encontrada como prova de que o recurso e carregado em todas as partidas.
+- HARVEST2.DAT comeca com registros de recursos XFLE3:\GRAPHIC\MONSTERS\...
+  e nomes .ABM de personagens. Isso confirma que parte dos dados locais e
+  um arquivo de recursos indexado/proprietario, e nao um texto simples.
+- As fontes customizadas no disco incluem HARVFONT.CFT, HARVFNT2.CFT,
+  MEDFONT1.CFT, MEDFONT2.CFT, TEXTFONT.CFT e TEXTFNT2.CFT. Os nomes indicam
+  recursos de fonte, mas a tabela de glifos ainda nao foi decodificada:
+  nao foi confirmado se existem acentos, cedilha ou caracteres necessarios
+  ao portugues.
+- O disco 3 tem oito arquivos FLC identificados por cabecalho FLIC valido:
+  CHESMOV1.FLC (50 quadros, 640x480), CHESMOV2.FLC (50, 640x480),
+  CHESMOV3.FLC (30, 640x480), CHOOSE1.FLC, CHOOSE2.FLC e CHOOSE3.FLC
+  (10 cada, 640x480), alem de HARVPNTR.FLC e OPERATE.FLC (10 cada,
+  26x26). Os nomes sugerem sequencias de escolha/xadrez e animacoes de
+  cursor/acao; isso e uma inferencia pelos nomes, nao uma validacao do que
+  aparece em cada quadro. Os quadros nao foram renderizados nem revistos.
+- Foi identificado um arquivo Making of em AVI no disco 3 e no Bonus Content.
+  O cabecalho informa video 320x240, 15 fps, codec IV41 (Indeo 4.1) e uma
+  trilha de audio PCM mono, 22.050 Hz, 16 bits. E material bonus, nao uma
+  cena confirmada do jogo; nao foi reproduzido nem transcrito.
+- O executavel referencia efeitos .WAV sob SOUND/EFFECTS e CONFIG.INI aponta
+  VOICE=SOUND\VOICE\. O cabecalho de SOUND.DAT no disco 3 contem um caminho
+  de recurso de voz. Isso confirma a existencia de recursos de voz no
+  pacote, mas nao quantos dialogos falados ha, quais falas cobrem ou se ha
+  legendas sincronizadas. Nenhum audio foi escutado.
+- O Bonus Content inclui uma trilha sonora em arquivos MP3 separados. Essa
+  musica e distinta das falas/vozes e nao prova que o audio do jogo esteja
+  localizado.
+
+RESULTADO E LIMITACOES
+- Os arquivos de texto mais promissores para uma localizacao sao
+  DIALOG.RSP e MENU.INI.
+- Ha uma variante diferente de DIALOG.RSP no disco 3, textos fixos no
+  executavel, fontes CFT, animacoes FLC e recursos em formatos binarios nos
+  tres CDs.
+- Ainda nao foi determinado por rastreamento do codigo qual versao de
+  DIALOG.RSP e aberta em cada cena, nem foram decodificados os formatos DAT,
+  SCR e de imagem/animacao. As referencias no executavel ainda nao foram
+  seguidas ate as rotinas de leitura. Portanto, este levantamento nao e uma
+  garantia de cobertura total do texto mostrado no jogo.
+- A validacao desta etapa foi estatica: catalogo ISO, nomes/caminhos
+  encontrados no executavel e cabecalhos de alguns recursos. Nao houve
+  execucao instrumentada do jogo, renderizacao dos FLC/ABM/FST/CMP, OCR das
+  imagens, revisao quadro a quadro ou reproducao/escuta de SOUND.DAT. Assim,
+  a lista ainda nao confirma todo texto visivel em cenarios, objetos, cenas
+  ou filmes, nem todas as falas de audio.
+- Antes de qualquer edicao binaria, seria necessario identificar a estrutura
+  dos arquivos, referencias/offsets, codificacao, limites de tamanho das
+  caixas de texto e suporte da fonte aos caracteres portugueses acentuados.
+- Nao foi feita traducao nem alteracao dos arquivos originais do jogo.
+  Foram criados este log, o script de catalogacao e os dois CSVs de mapa.
+- A traducao integral dos dialogos de um jogo comercial nao foi produzida.
+  Uma traducao autorizada da comunidade ou textos fornecidos pelo usuario
+  podem ser usados como base para orientar um patch compativel.
+
+MAPEAMENTO REPRODUZIVEL (15/10/2026)
+- O primeiro registro de HARVEST.DAT e um marcador XFLE seguido por um
+  caminho de recurso, por exemplo recursos graficos .BM/.ABM. HARVEST2.DAT
+  tambem comeca com XFLE e caminho, e SOUND.DAT contem marcadores de
+  recursos .CMP/.WAV. Esses arquivos nao se apresentam como ZIP comum.
+- Uma varredura de marcadores XFLE catalogou 7.699 referencias nos DATs das
+  tres ISOs e no HARVEST2.DAT instalado; ha 4.198 caminhos distintos entre
+  as copias. As extensoes observadas incluem BM, ABM, PAL, WAV, CMP, CFT e
+  PCX. Os CDs 1 e 2 repetem muitos recursos. O indice registra nome e offset
+  do marcador no contenedor, nao o tamanho real do recurso nem seu conteudo.
+- O inventario ISO registra 577 entradas de arquivo (330 no disco 1, 135 no
+  disco 2 e 112 no disco 3). Foram gerados MAPA-ARQUIVOS-ISO.csv e
+  MAPA-INDICES-DAT.csv usando MAPEAR-RECURSOS-HARVESTER.ps1. O script so
+  cataloga caminhos, tamanhos, cabecalhos e metadados FLC; nao desempacota
+  nem modifica recursos.
+- O RSP instalado e texto ASCII com quebras CRLF, 806 linhas e maior linha
+  observada de 150 caracteres. O arquivo nao exibe tabela de ponteiros
+  embutida. Isso nao demonstra como a rotina do executavel o le nem qual o
+  limite do buffer; a hipotese de que cada frase exige editar ponteiros nao
+  esta confirmada. As strings no EXE que citam dialog.rsp e mensagens de erro
+  demonstram uso/referencia ao arquivo, mas nao revelam a rotina de leitura.
+- As fontes candidatas sao CFT (nao FNT): HARVFONT, HARVFNT2, MEDFONT1,
+  MEDFONT2, TEXTFONT e TEXTFNT2. Nao foi decodificada sua tabela de glifos,
+  portanto suporte a acentos continua desconhecido. Nem os limites das caixas
+  de texto ou coordenadas foram localizados no codigo.
+- A varredura de indices encontrou recursos de audio .CMP/.WAV em SOUND.DAT,
+  mas nao extraiu, decodificou ou ouviu esses arquivos. Nao ha mapeamento
+  validado entre cada fala escrita e um arquivo de voz.
+- Ha 8 FLC no inventario do disco 3, com cabecalhos de 640x480 ou 26x26;
+  nomes, dimensoes e quadros constam no CSV. Nenhum quadro foi renderizado
+  ou inspecionado visualmente. PCX, BM, ABM, FST e CMP tambem nao foram
+  convertidos para imagens.
+- Ainda nao foi realizada engenharia reversa de instrucoes do executavel,
+  depuracao dinamica, breakpoint em leitura de arquivo, OCR, teste de tela
+  ou execucao instrumentada. As hipoteses de que todos os DAT sao arquivos
+  RLE/LZW, que ha uma tabela de ponteiros simples, que acentos podem ser
+  obtidos trocando caracteres da fonte e que basta alargar uma caixa nao
+  foram validadas.
+- Para continuar ate uma traducao jogavel, seria necessario decodificar o
+  formato XFLE e os recursos visuais/sonoros, identificar no codigo ou por
+  execucao quais recursos sao usados em cada cena, documentar os formatos de
+  dialogo autorizado e validar limites e glifos num build de teste. O script
+  e os CSVs atuais sao um inventario tecnico, nao um extrator/tradutor nem
+  uma promessa de localizacao completa.
+
+ANALISE E EXTRACAO XFLE (15/10/2026)
+- Os primeiros bytes dos contenedores seguem o padrao "XFLE", um digito de
+  volume/slot, dois-pontos, caminho ASCII iniciado por barra invertida,
+  terminador NUL e bytes opacos de recurso. Exemplo estrutural:
+  "XFLE3:\GRAPHIC\MONSTERS\JIMMY.ABM\0". Os slots observados foram 1 para
+  HARVEST.DAT, 2 para SOUND.DAT e 3 para HARVEST2.DAT.
+- Nao foi observado um campo obvio de tamanho ou offset imediatamente apos
+  o caminho. O prototipo trata cada payload como os bytes entre o NUL do
+  caminho atual e o proximo marcador XFLE valido; esse limite e uma
+  observacao do layout, nao uma interpretacao de tamanho descomprimido nem
+  prova de que todo recurso esteja descomprimido.
+- Foi criado xfle_tool.py com comandos inspect, unpack e pack. O manifesto
+  conserva slot, caminho interno, offset, tamanho da fatia e bytes de prefixo.
+  A extracao mantem a hierarquia por slot. Caminhos internos repetidos sao
+  preservados com sufixos unicos nos nomes de saida, sem perder o caminho
+  original registrado no manifesto.
+- O comando extract-iso foi adicionado para copiar um arquivo de uma ISO
+  ISO9660 sem extrair todo o disco. Foi validado com HARVEST.DAT do disco 3;
+  o arquivo extraido teve 127.704.762 bytes e SHA-256
+  A293364B17453F61BE30291F061F73E2270E002B9F5B79C38CA1BD28C5F5BCE2.
+- Round-trip realizado em pasta temporaria, sem alterar os arquivos do jogo:
+  HARVEST\HARVEST2.DAT instalado (22 registros), HARVEST.DAT e SOUND.DAT
+  do disco 1, e HARVEST.DAT e SOUND.DAT do disco 3. Nos cinco casos o arquivo
+  reempacotado teve o mesmo SHA-256 do contenedor original. O caminho direto
+  ISO -> extract-iso -> unpack -> pack tambem foi validado para HARVEST.DAT
+  do disco 3.
+- Duplicidades internas confirmadas no disco 3: dois pares de caminhos em
+  HARVEST.DAT (FOOTLFT1.WAV e FOOTRHT1.WAV) e um caminho repetido em SOUND.DAT
+  (5495.CMP). O primeiro teste interrompeu na duplicidade; o extrator foi
+  ajustado e todos os cinco round-trips seguintes passaram.
+- O round-trip prova preservacao exata quando os recursos extraidos nao sao
+  alterados. Nao prova que arquivos modificados, textos maiores ou recursos
+  reempacotados sejam aceitos pelo jogo; nenhuma imagem, voz ou cena foi
+  alterada ou testada em execucao.
+- Para usar: `python xfle_tool.py extract-iso HARVEST_CD\HARVESTER_DISC1.ISO HARVEST.DAT pasta\HARVEST.DAT`,
+  `python xfle_tool.py inspect pasta\HARVEST.DAT`,
+  `python xfle_tool.py unpack pasta\HARVEST.DAT pasta_de_saida`, e
+  `python xfle_tool.py pack pasta_de_saida novo_arquivo.DAT`. O arquivo de
+  saida do pack deve ser diferente do original; substituir um arquivo
+  existente exige a opcao explicita `--force`.
+
+TESTES ISOLADOS DE TEXTO E GRAFICO (15/10/2026)
+- Foi criada uma copia temporaria completa da pasta HARVEST. Somente nessa
+  copia, DIALOG.RSP e MENU.INI receberam a frase ASCII de teste maior
+  fornecida pelo usuario, mantendo as quebras CRLF; QUICK_TIPS foi desligado
+  apenas na configuracao temporaria para facilitar a observacao.
+- O jogo iniciou no DOSBox e chegou ao menu e a confirmacao de novo jogo. A
+  frase maior apareceu por inteiro numa linha e o processo permaneceu ativo
+  ate esse ponto; nao houve crash observado nesse percurso especifico. O texto
+  ultrapassou a largura do retangulo da caixa e invadiu a area externa. Isto
+  demonstra leitura/renderizacao do texto de teste nessa execucao, mas nao
+  mede o maior tamanho seguro nem garante comportamento para todas as falas.
+- Como DIALOG.RSP e MENU.INI foram alterados juntos no primeiro ensaio, nao
+  foi possivel atribuir a frase exibida a um arquivo especifico. O ensaio A/B
+  separado foi iniciado, mas a janela perdeu o foco durante a automacao;
+  foi interrompido sem conclusao. Logo, o efeito independente de cada arquivo
+  continua por confirmar. A frase era ASCII sem acentos: o teste nao valida
+  codificacao portuguesa nem suporte a caracteres acentuados.
+- COMPLEMENTO APOS REPETICAO DOS TESTES ISOLADOS:
+  - O usuario confirmou que a interacao com o computador causou a perda de
+    foco durante o primeiro ensaio A/B; os testes seguintes foram feitos em
+    janelas separadas, com observacao/interacao manual do usuario, sem cliques
+    ou teclas enviados automaticamente.
+  - Variante somente DIALOG.RSP: o texto "START A NEW GAME?" foi trocado por
+    "INICIAR UM NOVO JOGO TESTE DE LIMITE?" na copia. O usuario selecionou
+    NEW GAME, mas informou que a confirmacao nao apareceu nessa tentativa.
+    Assim, essa execucao nao confirmou DIALOG.RSP como origem da confirmacao;
+    nao permite concluir que o arquivo nunca seja lido em outros contextos.
+  - Variante somente MENU.INI: o marcador longo apareceu na pergunta de
+    confirmacao; a captura do usuario mostra-o ultrapassando a borda da caixa,
+    sem encerramento do processo nessa observacao.
+  - Ensaio final somente MENU.INI, com marcadores distintos: a chave
+    main_menu_1=ITEM TESTE foi exibida no item selecionado do menu, e
+    newgame=     CONFIRMACAO TESTE? foi exibida na pergunta de confirmacao. A
+    captura confirma que MENU.INI fornece os dois textos visiveis nessa tela:
+    o rotulo do item e a pergunta de confirmacao. Portanto, o primeiro teste,
+    que alterou ambos os arquivos, nao e evidencia de que DIALOG.RSP forneceu
+    essa frase de confirmacao.
+  - A confirmacao aparece em uma caixa modal sobre a tela do menu. Na captura,
+    o item de menu personalizado continua visivel acima dela. "NEW GAME"
+    deixou de aparecer como texto porque sua chave foi substituida por
+    "ITEM TESTE" nessa variante; nao foi removido pelo jogo.
+  - O teste confirmou somente a substituicao e a renderizacao dos marcadores
+    ASCII. O texto longo extravasa a caixa; ainda nao foram medidos o limite
+    maximo, o comportamento de todas as falas, nem a exibicao de acentos.
+    O jogo permaneceu aberto nas observacoes com MENU.INI alterado.
+- RESTRICAO DE LOCALIZACAO DEFINIDA PELO USUARIO:
+  - A traducao para portugues deve usar somente caracteres ASCII, sem acentos
+    ou cedilha, para evitar caracteres que o usuario espera que sejam exibidos
+    incorretamente pelo jogo (por exemplo: "voce", "nao", "coracao").
+  - Esta e uma decisao pratica de escopo para a traducao; nao representa um
+    teste que tenha confirmado o comportamento de cada glifo da fonte.
+- TESTE ADICIONAL DE COMPRIMENTO E ALINHAMENTO DA PERGUNTA (15/10/2026):
+  - Em uma nova copia isolada, somente a chave `newgame` de MENU.INI recebeu
+    `INICIAR UM NOVO JOGO TESTE DE LIMITE DE BUFFER OVERFLOW?` (56 caracteres
+    ASCII). O usuario observou que a pergunta permanece na tela ate escolher
+    uma resposta, mas o texto visivel termina em `... LIMITE DE ` e nao cabe
+    na largura da caixa; nao foi observado encerramento do jogo.
+  - Em outra copia, a mesma pergunta foi testada sem os cinco espacos que
+    antecediam o valor original de `newgame`. O usuario confirmou que o texto
+    deslocou para a esquerda e revelou mais caracteres, mas continuou cortado
+    e ultrapassando os limites da caixa. Isso confirma o efeito desses
+    espacos no posicionamento aparente, nao que seja possivel fazer a frase
+    inteira caber apenas removendo-os.
+  - Interpretacao: ha limitacao de exibicao/recorte nesta caixa e nesta
+    posicao. O resultado nao mede o limite maximo de memoria, nao demonstra
+    buffer overflow e nao permite afirmar se a engine aloca memoria
+    dinamicamente. Uma frase que permanece aberta para resposta tambem nao
+    prova como e implementada a leitura; conclusoes sobre delimitadores CRLF
+    ou buffers requerem evidencia separada.
+  - Nenhum arquivo original foi alterado. Os testes usaram apenas copias
+    ASCII temporarias, removidas ao final; as instancias DOSBox iniciadas
+    para os testes foram encerradas.
+- ESCOPO DOS TESTES GRAFICOS E DE FONTE:
+  - O teste anterior de PCX confirmou a preservacao do modo indexado e da
+    paleta ao salvar uma copia do arquivo avulso, mas essa imagem nao foi
+    inserida em um recurso XFLE nem carregada pelo jogo. Portanto, o pipeline
+    de edicao/reempacotamento grafico ainda nao foi validado. O extrator atual
+    registra fatias de payload XFLE sem decodificar formatos internos; nao e
+    seguro substituir uma fatia por um PCX avulso e tratar isso como teste
+    valido de paleta.
+  - Nenhuma fonte CFT foi editada ou substituida. A traducao foi definida
+    pelo usuario como ASCII sem acentos, entao o teste de remapear glifos
+    acentuados foi deixado fora do escopo. O formato CFT permanece
+    indeterminado; nao se conclui dele que outros caracteres imprimiveis
+    estejam ausentes.
+- TESTES DE REGUA, QUEBRA AUTOMATICA E ALTURA VERTICAL (15/10/2026):
+  - Os tres ensaios foram executados em perfis separados dentro de
+    TESTES-GABARITO-UI, cada um com uma copia completa de HARVEST e um arquivo
+    DOSBox TESTE.conf. Isso preserva os originais e permite repetir os
+    cenarios; a documentacao de execucao esta em
+    TESTES-GABARITO-UI\README.txt.
+  - Regua: a pergunta newgame em MENU.INI foi substituida por uma sequencia
+    numerica repetida. O usuario contou cinco repeticoes completas visiveis
+    no total, seguidas por "012". Apenas tres repeticoes completas estavam
+    dentro do retangulo; o usuario observou o zero da terceira sobre a linha
+    final da caixa. A borda exata nao foi medida. E uma observacao visual da
+    caixa de confirmacao, nao uma medicao em pixels nem uma contagem garantida
+    de largura para os dialogos.
+  - Quebra automatica: uma frase longa com espacos, na mesma pergunta do
+    MENU.INI, permaneceu em uma linha e foi cortada/excedeu a caixa. Nao foi
+    observada quebra automatica de linha nesse componente da interface.
+    Esse resultado vale para a pergunta do menu; a quebra em falas de
+    DIALOG.RSP ainda nao foi testada diretamente.
+  - Altura: substituindo os seis rotulos principais do MENU.INI por
+    "LINHA 1" a "LINHA 6", o usuario confirmou que as seis linhas aparecem.
+    Como observado pelo usuario, esse ensaio altera NEW GAME, SAVE GAME,
+    LOAD GAME e os demais itens do menu principal. Ele mede somente o menu
+    principal; nao determina quantas linhas cabem numa caixa de fala.
+  - Gabarito parcial: para a pergunta de confirmacao, o alinhamento sem
+    espacos iniciais revela mais caracteres a esquerda, mas a regua mostra
+    que tres grupos de dez digitos ja ocupam praticamente toda a largura
+    interna (o ultimo zero toca a borda). Traducao deve priorizar frases
+    curtas. Nao extrapolar essa contagem para caixas de dialogo diferentes
+    ou para fontes proporcionais.
+  - Foi gerado CONTAGEM-CARACTERES-DIALOG-RSP.csv, com uma linha por registro
+    original e contagens de caracteres, partes separadas por "/" e maior
+    parte. O arquivo tem 806 registros ASCII; comprimento medio de 30,7
+    caracteres, mediana de 16 e maximo de 150 (registro 524). Esses numeros
+    descrevem o arquivo, incluindo prefixos/separadores de opcoes; nao
+    representam largura visual ou limite seguro da caixa.
+  - Os tres perfis de teste foram mantidos na pasta TESTES-GABARITO-UI para
+    reproducao. As instancias DOSBox usadas nesses ensaios foram encerradas.
+    Os hashes SHA-256 de DIALOG.RSP, MENU.INI, HARVEST.EXE e HARVEST2.DAT
+    instalados permaneceram iguais aos valores verificados anteriormente.
+- INSPECAO DA ESTRUTURA DOS REGISTROS DIALOG.RSP (15/10/2026):
+  - Reexaminados os bytes do DIALOG.RSP instalado: 806 registros fisicos
+    terminados em CRLF; nenhum byte de controle adicional a CR/LF e nenhum
+    caractere de barra invertida, pipe ou tab foi encontrado no texto.
+  - A linha fisica 524 tem 150 caracteres, mas nao e uma fala continua de
+    150 caracteres: contem tres alternativas na mesma linha, separadas por
+    duas barras `/`. Os trechos, contando os prefixos `1.`, `2.` e `3.`, tem
+    52, 41 e 55 caracteres. Nao ha quebra CRLF dentro dessa linha.
+  - A barra `/` separa trechos/alternativas em varios registros; foram
+    contadas 505 ocorrencias em 382 registros. Uma contagem mecanica da
+    separacao resulta em 1.311 trechos. A barra nao e evidenciada como
+    marcador de quebra de linha. Nao foi localizado outro marcador explicito
+    de quebra de linha no texto cru.
+  - Correcao de contagem: o maior trecho individual tem 98 caracteres no
+    registro 263, incluindo o prefixo `2.`; o texto apos o prefixo tem 95.
+    O registro 471 e uma frase corrida de 95 caracteres sem `/`. O registro
+    49 tem um trecho de 82 caracteres, mas nao e o maior do arquivo.
+  - Foi criado CONTAGEM-PARTES-DIALOG-RSP.csv com uma linha para cada trecho
+    separado por `/`, numero do registro, posicao, contagem e texto literal.
+    Os comprimentos incluem prefixos numericos quando existentes.
+  - Nao e possivel determinar com seguranca, apenas pelo DIALOG.RSP, qual
+    conjunto de registros constitui um balão, quando muda o personagem, ou
+    quantas linhas de altura uma fala usa na tela: o arquivo e uma sequencia
+    de registros sem identificadores explicitos de personagem/caixa, e `/`
+    separa alternativas em vez de linhas visuais. Os ensaios de word-wrap e
+    altura ja observados foram no menu; nao se extrapolam para as falas.
+  - O comprimento em caracteres dos textos originais e uma referencia
+    editorial, nao uma safe bounding box garantida: a estrutura nao revela a
+    fonte, a largura renderizada, a caixa associada a cada registro, nem
+    prova que uma traducao com a mesma contagem visual caiba.
+- TESTE EMPIRICO DO REGISTRO 1 E SONDAGEM DOS SCRIPTS SCR (15/10/2026):
+  - Foi criada a copia persistente TESTES-GABARITO-UI\04-DIALOG-95. Somente
+    a primeira alternativa do registro 1 de DIALOG.RSP foi trocada por 95
+    letras ASCII `W`; o prefixo `1. `, a segunda alternativa, os terminadores
+    CRLF e o total de 806 registros foram mantidos. Nao foi introduzido BOM.
+  - O usuario iniciou o jogo, saiu da casa e conversou com Jimmy. A conversa
+    mostrou opcoes de resposta, mas nenhuma sequencia W apareceu. Portanto,
+    o registro 1 nao foi identificado como a opcao exibida nessa interacao.
+    O teste nao mediu a renderizacao de 95 caracteres numa caixa de dialogo
+    nem provou um limite de buffer; o RSP pode usar outra linha nessa conversa.
+  - O arquivo HARVEST.SCR do disco 1 foi extraido para SCR-INSPECTION e
+    decodificado com XOR 0xAA, mantendo CR/LF intactos. O cabecalho legivel
+    resultante `{// HARVESTER (c) 1995-96 Scripting Language` valida a
+    transformacao observada. A mesma operacao foi feita nas tres variantes.
+  - DISC1 e DISC2: 523.433 bytes e SHA-256 identico; sao o mesmo arquivo
+    byte a byte. O script decodificado tem 7.366 linhas, 31 ocorrencias de
+    START_DIALOG (26 fora de linhas comentadas) e 67 ocorrencias de SHOW_TEXT
+    (48 fora de linhas comentadas).
+  - DISC3: 335.567 bytes, SHA-256 diferente; o cabecalho decodificado comeca
+    por `{// responses }`. Contem 18 ocorrencias de START_DIALOG (17 fora de
+    linhas comentadas) e 54 ocorrencias de SHOW_TEXT (48 fora de comentarios).
+  - Nos tres scripts decodificados, START_DIALOG associa um identificador de
+    comando a um nome de personagem; SHOW_TEXT referencia um identificador
+    de texto; ha definicoes TEXT com identificadores, tipo de caixa e texto.
+    A busca nao encontrou referencia literal ao nome DIALOG.RSP nem um indice
+    de linha do RSP associado diretamente a esses comandos. Isto deixa a
+    ligacao entre cada opcao/registro do RSP e as conversas ainda em aberto;
+    nao demonstra que essa ligacao nao exista em outra parte do executavel ou
+    nos recursos.
+  - Foi gerado TESTES-GABARITO-UI\SCR-INSPECTION\HARVEST-SCR-DIALOG-MAP.csv,
+    um indice dos comandos START_DIALOG, SHOW_TEXT e das definicoes TEXT nos
+    scripts decodificados. Os SCR brutos e textos decodificados, com hashes e
+    instrucoes, ficam nessa mesma pasta. Nenhum SCR original da ISO ou do
+    jogo instalado foi modificado.
+- Os arquivos originais HARVEST.EXE, HARVEST2.DAT, DIALOG.RSP e MENU.INI
+  foram conferidos por SHA-256 depois do teste e continuaram iguais aos
+  hashes iniciais. A copia temporaria e as capturas foram removidas.
+- O arquivo GRAPHIC\OTHER\CENSORED.PCX solto no disco 1 foi lido por um
+  decodificador PCX: 320x200, modo indexado P, paleta de 768 bytes e 6 cores
+  utilizadas. Numa copia temporaria foi desenhado um quadrado vermelho e
+  salvo novamente em PCX. O arquivo resultante manteve modo indexado,
+  dimensoes e paleta identica; o tamanho passou de 7.199 para 7.168 bytes.
+  Este teste verifica a escrita PCX/paleta, nao a compatibilidade do arquivo
+  com o jogo: ele nao foi reempacotado nem executado no DOSBox.
+- Teste negativo importante: as fatias obtidas pelo marcador XFLE para
+  GRAPHIC\OTHER\CENSORED.PCX e GRAPHIC\FONT\TEXTFONT.CFT nao sao os mesmos
+  arquivos soltos da ISO e nao foram reconhecidas como PCX/fontes comuns.
+  Os tamanhos observados foram 7.314 bytes e 8.255 bytes, respectivamente,
+  versus 7.199 e 10.972 bytes nos arquivos soltos. Isso confirma que o
+  extrator atual delimita payloads, mas nao decodifica a representacao interna
+  desses recursos.
+- Nao foi possivel fazer uma edicao visual segura de .BM/.ABM/FLC ou alterar
+  um CFT: os formatos internos ainda nao foram decodificados. Nenhum bitmap,
+  fonte, animacao ou contenedor original foi modificado.
+- ELO ENTRE SCRIPT, DIALOG.RSP E FALAS DOS NPCS (15/10/2026):
+  - O DIALOG.RSP contem somente as opcoes do jogador e os topicos (ex.:
+    "Lodge", "BYE"). As falas dos NPCs ficam em DIALOGUE.IDX (270.908 bytes,
+    identico nos tres discos), cifrado com o mesmo XOR 0xAA, CR/LF
+    preservados. Formato decodificado: linha com numero, linha com texto
+    entre aspas; 2.533 pares, IDs unicos e crescentes (1 a 20000). 2.531
+    IDs coincidem com SOUND\VOICE\<ID>.CMP: o ID e o numero do arquivo de voz.
+  - INDEX.001/002/003 nao sao dialogo: sao diretorios XFLE (caminho com
+    preenchimento + campos de tamanho) de HARVEST.DAT/SOUND.DAT/HARVEST2.DAT.
+    Podem servir depois para obter tamanhos reais no xfle_tool.
+  - O SCR nao contem arvore de dialogo: START_DIALOG recebe apenas o nome do
+    NPC (ex.: "JIMMY"). A arvore esta compilada no HARVEST.EXE (LE DOS/4GW,
+    stub MZ interno em 0x41534; obj1=codigo em arquivo 0x70934, obj3=dados
+    em 0xF2934). Padrao de fala: mov ebx,<expressao>; mov edx,<ptr nome do
+    falante em obj3>; mov eax,<ID do IDX>; call 0xDAFC4. Padrao de menu:
+    mov eax,<linha RSP, base 1>; call 0x9AAD4 e compara a escolha.
+    Ex.: 0x920E8 -> MOM, ID 8759; mov eax,0x107 -> RSP linha 263
+    ("1. You're sick, Mom/...").
+  - Mapa gerado: TESTES-GABARITO-UI\IDX-INSPECTION\MAPA-ARVORE-DIALOGO-EXE.csv
+    (893 falas, 483 menus). Cobertura parcial: 868 de 2.533 IDs do IDX e 482
+    de 806 linhas do RSP; outras chamadas usam padroes diferentes (rotina
+    candidata 0xE284C com 380 sitios ainda nao classificada).
+  - Rastreio do Jimmy: falas IDs 19020, 19047, 19078, 19086... e menus RSP
+    linhas 245, 246 ("1. I've got better things to do./2. I'm supposed to?
+    I don't remember.") e 247 ("1. Yes, I do./2. Nope, sorry."). Explica o
+    teste negativo da linha 1.
+  - Consequencias: o RSP e enderecado por NUMERO DE LINHA fixo no EXE; a
+    traducao deve manter 806 linhas na mesma ordem e o mesmo numero de
+    alternativas "/". O IDX e enderecado por ID; o tamanho do texto ainda nao
+    foi testado. HARVEST.SCR e arquivo solto no CD (nao esta no .DAT); o EXE
+    abre "dialogue.idx" pelo nome (tambem usado em cd_change_requestor para
+    identificar o disco). Ainda nao confirmado se o jogo le IDX/SCR de C: ou
+    somente do CD; isso precisa de teste antes de qualquer injecao.
+  - Nenhum arquivo original foi alterado. Arquivos extraidos/decodificados
+    ficam em TESTES-GABARITO-UI\IDX-INSPECTION.
+- PREPARACAO DOS TESTES 05-JIMMY-RSP E 06-JIMMY-IDX-C (15/10/2026):
+  - Objetivo: confirmar no jogo o mapa MAPA-ARVORE-DIALOGO-EXE.csv para o
+    Jimmy e descobrir se DIALOGUE.IDX pode ser substituido por uma copia em
+    C:\HARVEST (sem alterar as ISOs). Dois perfis separados para que cada
+    resultado tenha uma unica causa.
+  - 05-JIMMY-RSP: somente DIALOG.RSP alterado. Linha 245 "Hey, Steve. I'm
+    Jimmy James...yak" -> "TESTE RSP 245"; linha 246 -> "1. TESTE RSP 246
+    OPCAO UM/2. TESTE RSP 246 OPCAO DOIS"; linha 247 -> "1. TESTE RSP 247
+    OPCAO UM/2. TESTE RSP 247 OPCAO DOIS". Mantidos 806 linhas, CRLF, sem
+    BOM, mesmo numero de "/" por linha. SHA-256 do RSP de teste:
+    146C2900E51F4287831EFAE9E33B6E605C97220DAB22A368E87BCA56070BBE8A.
+  - 06-JIMMY-IDX-C: DIALOG.RSP identico ao original (SHA-256 81C37E07...).
+    Copia de DIALOGUE.IDX do disco 1 colocada em C:\HARVEST, com o texto do
+    ID 19020 "Hey, Steve!  I'm Jimmy James, remember me?" substituido por
+    "TESTE IDX 19020 JIMMY" completado com pontos ate 42 caracteres (mesmo
+    tamanho; arquivo continua com 270.908 bytes) e recifrado com XOR 0xAA
+    preservando CR/LF. SHA-256: D8D01C35B55C76C00CCC308634129E3B9E4F125A41B5
+    AC84F8ACF4F07C3BD079. O tamanho igual isola a pergunta "o jogo le o IDX
+    de C:?" de qualquer efeito de mudanca de tamanho.
+  - Leitura esperada: no 05, marcadores 246/247 nas opcoes de resposta
+    confirmam o enderecamento do RSP por numero de linha (base 1); o papel
+    da linha 245 (menu de uma so opcao ou outro uso) sera indicado pelo
+    aparecimento ou nao de "TESTE RSP 245". No 06, o marcador na legenda da
+    primeira fala indica leitura do IDX local; a legenda original indica
+    leitura do CD (seria preciso montar um D: modificado). Erro "Error
+    opening DIALOGUE.IDX" ou travamento devem ser registrados como tal.
+  - Os perfis aguardam execucao manual pelo usuario (sem automacao de
+    teclado/mouse, como nos testes anteriores). RESULTADO: PENDENTE.
+- RESULTADO DOS TESTES 05-JIMMY-RSP E 06-JIMMY-IDX-C (15/10/2026):
+  - 05-JIMMY-RSP (capturas do usuario): ao conversar com Jimmy, a primeira
+    fala apareceu normal ("Hey, Steve!  I'm Jimmy James, remember me?",
+    retrato de Jimmy). Em seguida a caixa "Responses" mostrou
+    "1. TESTE RSP 246 OPCAO UM" e "2. TESTE RSP 246 OPCAO DOIS".
+    CONFIRMADO no jogo: o EXE abre o DIALOG.RSP pelo numero da linha, base 1
+    (mov eax,246 -> linha 246), e cada parte separada por "/" vira uma opcao
+    numerada. O mapa MAPA-ARVORE-DIALOGO-EXE.csv acertou essa conversa.
+  - "TESTE RSP 245" nao foi visto neste percurso, e a linha 247 nao foi
+    alcancada nas capturas (depende da opcao escolhida). O uso real da linha
+    245 continua em aberto; nao se conclui que ela nao seja usada.
+  - Observacao adicional da captura: a legenda da fala do NPC QUEBRA LINHA
+    automaticamente ("...remember" / "me?") dentro da caixa vermelha
+    superior. Diferente da pergunta do MENU.INI, que nao quebrava. Os espacos
+    duplos do IDX sao exibidos como estao. O titulo "Responses" nao vem do
+    RSP; a origem (EXE ou outro arquivo) ainda nao foi localizada.
+  - 06-JIMMY-IDX-C: segundo o usuario, nada mudou; a legenda original da
+    fala 19020 apareceu e nao houve erro relatado. CONCLUSAO: a copia de
+    DIALOGUE.IDX em C:\HARVEST nao e lida; o jogo le o IDX do CD (D:). Para
+    traduzir as falas dos NPCs e preciso entregar o IDX modificado pelo
+    drive D: (ISO modificada ou D: montado de outra forma).
+- PREPARACAO DO TESTE 07-JIMMY-IDX-ISO (15/10/2026):
+  - Como o IDX em C: foi ignorado (teste 06), o IDX modificado passa a ser
+    entregue pelo proprio CD. Foi feita uma COPIA da ISO do disco 1 em
+    TESTES-GABARITO-UI\07-JIMMY-IDX-ISO\HARVESTER_DISC1_TESTE.ISO; nela o
+    DIALOGUE.IDX foi sobrescrito no lugar, no offset 0x157000 (setor 686),
+    com o mesmo IDX do teste 06 (270.908 bytes, SHA-256 D8D01C35...). Como
+    o tamanho e igual, nenhuma entrada de diretorio ISO9660 foi alterada; a
+    ISO de teste manteve 603.586.560 bytes. A extracao do IDX da ISO de
+    teste com xfle_tool.py extract-iso devolveu o hash esperado D8D01C35...
+  - TESTE.conf deste perfil monta como D: a ISO de teste + DISC2 e DISC3
+    originais; C: e uma copia limpa de HARVEST (RSP original, sem IDX local).
+  - A ISO original do disco 1 nao foi modificada (SHA-256
+    DC0F61FF1F62609F6D836D429E42BFBCDF8ABFCDC2D88F53A3B7A22E01397DF6).
+  - Leitura esperada: marcador na legenda -> o jogo le o IDX do D: e a
+    traducao das falas pode ser entregue por ISO modificada; texto original
+    -> o IDX vem de outro lugar (outra ISO, cache ou outro mecanismo).
+  - Aguardando execucao manual pelo usuario. RESULTADO: PENDENTE.
+- RESULTADO DO TESTE 07-JIMMY-IDX-ISO (15/10/2026):
+  - Captura do usuario: ao conversar com Jimmy, a legenda da primeira fala
+    mostrou "TESTE IDX 19020" / "JIMMY.....................", com retrato de
+    Jimmy e sem erro ou travamento relatado.
+    CONFIRMADO no jogo: as legendas dos NPCs vem do DIALOGUE.IDX lido do D:
+    (CD). A cifra XOR 0xAA reaplicada foi aceita, e o IDX e enderecado pelo
+    ID da fala (19020), como no mapa do EXE. Traduzir as falas dos NPCs por
+    ISO modificada e viavel, ao menos com texto de mesmo tamanho.
+  - A quebra automatica de linha foi confirmada outra vez: o jogo quebrou no
+    espaco antes de "JIMMY", porque a palavra seguinte (26 caracteres) nao
+    cabia na primeira linha. A quebra e feita por palavra; uma palavra muito
+    longa sem espacos ainda nao foi testada.
+  - LIMITE PARA O PROXIMO PASSO: o teste usou texto com o MESMO tamanho. Na
+    ISO, o DIALOGUE.IDX ocupa 270.908 bytes = 133 setores de 2.048 bytes
+    (272.384 bytes alocados), entao sobram 1.476 bytes no ultimo setor.
+    Uma traducao ate esse limite poderia ser gravada no mesmo lugar, mas
+    exigiria atualizar o tamanho no registro de diretorio ISO9660 (as duas
+    ordens de bytes). Acima disso, seria preciso reconstruir a ISO ou mover
+    o arquivo. Ainda nao foi testado se o EXE aceita um IDX de tamanho
+    diferente (por exemplo, se usa algum offset fixo).
+  - Lembrete: DIALOGUE.IDX existe nos tres discos (identico). Uma traducao
+    precisa ser aplicada nas tres ISOs, pois o jogo troca de CD.
+- FERRAMENTA DE TRADUCAO harvester_texto.py E PLANILHAS (15/10/2026):
+  - Criado harvester_texto.py na pasta do projeto, com quatro comandos:
+    mapear-exe, exportar, construir e gravar-iso. Reaproveita o formato
+    confirmado: RSP em texto, IDX e SCR com XOR 0xAA preservando CR/LF.
+  - mapear-exe: nova versao do mapa do EXE. Procura TODAS as chamadas a
+    rotina de fala (0xDAFC4) e de menu (0x9AAD4) e le EAX/EBX/EDX nas
+    instrucoes anteriores, nao apenas "mov eax; call" colados. Resultado:
+    2.234 chamadas de fala, 1.562 IDs do IDX distintos (antes 868); 651
+    chamadas de menu, 647 linhas do RSP distintas (antes 482). 625 chamadas
+    de fala calculam o ID em execucao (tabelas/aleatorio) e ficam sem ID no
+    mapa. A rotina 0xE284C, antes candidata, foi descartada: e alocacao de
+    memoria (EAX = 12, 80, 136 bytes...). O mapa foi regravado em
+    TESTES-GABARITO-UI\IDX-INSPECTION\MAPA-ARVORE-DIALOGO-EXE.csv.
+  - exportar: gerou a pasta TRADUCAO com TRADUCAO-RSP.csv (806 linhas, com
+    numero de opcoes e usos no EXE), TRADUCAO-IDX.csv (2.533 falas, com
+    falante: 1.500 lidos do EXE, 660 inferidos pelos IDs vizinhos, que vem
+    agrupados por personagem; 373 sem falante) e TRADUCAO-SCR.csv (1.434
+    textos unicos dos SCR dos discos 1/2 e 3: 816 TEXT, 557 nomes de objeto,
+    61 nomes de NPC; "_" exibido como espaco; repeticoes agrupadas). A
+    coluna Traducao comeca vazia. Os nomes de objeto/NPC sao candidatos
+    ("Examine the %s"); que eles aparecem na tela ainda nao foi testado.
+  - construir: le as planilhas e gera DIALOG.RSP, DIALOGUE.IDX (cifrado) e
+    os HARVEST.SCR (cifrados). Linhas sem traducao ficam iguais. Valida
+    antes de gravar: somente ASCII sem acentos; mesmo numero de opcoes "/"
+    no RSP; nenhuma opcao vazia; sem aspas e sem "_" nos textos do SCR;
+    coluna Original igual ao arquivo de entrada. Com qualquer erro, nada e
+    gravado (testado: acento e opcao faltando foram rejeitados).
+  - Round-trip com traducoes vazias: os quatro arquivos reconstruidos
+    (RSP, IDX, SCR disco 1, SCR disco 3) tem SHA-256 identico aos originais.
+    O SCR do disco 3 termina com um byte NUL apos o ultimo CRLF; a
+    ferramenta preserva esse resto.
+  - gravar-iso: copia a ISO e substitui arquivos. Se o novo arquivo cabe nos
+    setores ja alocados, grava no lugar; senao (ou com --sempre-anexar)
+    grava no fim da imagem. Atualiza extent e tamanho no registro de
+    diretorio ISO9660 (as duas ordens de bytes) e o tamanho do volume no
+    descritor primario; depois rele e confere o arquivo. Nunca altera a
+    ISO de origem.
+- PREPARACAO DO TESTE 08-JIMMY-PT-ISO (15/10/2026):
+  - Primeiro teste com traducao real, feito do inicio ao fim pela
+    ferramenta. Planilhas em 08-JIMMY-PT-ISO\TRADUCAO: 8 falas do Jimmy
+    (IDs 19020, 19032, 19047, 19051, 19060, 19066, 19078, 19086) e RSP
+    linhas 246 ("1. Tenho coisas melhores pra fazer./2. Eu deveria?  Nao me
+    lembro.") e 247 ("1. Tenho, sim./2. Nao, foi mal.").
+  - Saidas: DIALOG.RSP 26.322 bytes (SHA-256 70F8C973...), copiado para
+    C:\HARVEST do perfil; DIALOGUE.IDX 270.878 bytes (SHA-256 5F1A83B1...),
+    30 bytes MENOR que o original, gravado com --sempre-anexar na copia da
+    ISO do disco 1: movido do setor 686 para o setor 294720 (fim da imagem);
+    ISO de teste com 603.858.944 bytes. A extracao do IDX da ISO de teste
+    devolveu o hash esperado; HARVEST.SCR da ISO de teste continua com o
+    hash original. A ISO original do disco 1 manteve SHA-256 DC0F61FF...
+  - O teste verifica, de uma vez: IDX com tamanho diferente, IDX movido para
+    outro setor da ISO e texto portugues real nas legendas e respostas. Se
+    falhar, o proximo passo e separar as causas (mesmo setor com tamanho
+    diferente x setor novo).
+  - Aguardando execucao manual pelo usuario. RESULTADO: PENDENTE.
+- RESULTADO DO TESTE 08-JIMMY-PT-ISO (15/10/2026):
+  - Capturas do usuario: a legenda "Ei, Steve!  Sou o Jimmy James, lembra
+    de mim?" apareceu em portugues, com quebra automatica ("lembra" / "de
+    mim?"). A caixa "Responses" mostrou "1. Tenho coisas melhores pra
+    fazer." e "2. Eu deveria?  Nao me lembro." (linha 246), e o usuario
+    tambem viu a opcao "Nao, foi mal" (linha 247). Sem erro ou travamento.
+  - Duas falas ficaram em ingles, como esperado: a resposta do Jimmy a
+    "Nao, foi mal" e a despedida "See ya later, alligator." Esses IDs
+    (19132 "Aw, gee whiz..." e 19256 "See ya later, alligator.") nao
+    estavam entre as 8 falas traduzidas no teste. Nao e falha da ferramenta.
+  - CONFIRMADO no jogo: o DIALOGUE.IDX pode mudar de tamanho e ser movido
+    para o fim da ISO (setor novo, diretorio ISO9660 e tamanho do volume
+    atualizados) e o jogo continua lendo normalmente. O processo completo
+    planilha -> construir -> gravar-iso funciona para RSP e IDX.
+- PREPARACAO DO TESTE 09-SCR-ORIGEM (15/10/2026):
+  - Perguntas: (1) o jogo le HARVEST.SCR do C:\HARVEST ou do CD? (2) os
+    nomes de objeto/NPC do SCR (campo final dos registros OBJECT/NPC)
+    aparecem na tela? (3) TEXT do SCR traduzido aparece?
+  - Um unico teste responde as tres: duas versoes do SCR com marcadores
+    diferentes, geradas por harvester_texto.py construir a partir de
+    09-SCR-ORIGEM\TRADUCAO_C e TRADUCAO_D. Itens marcados (frente da casa,
+    sala PCHOUSE): TEXT PC_MAILBOX_LTEXT -> "TESTE SCR LIDO DO C|D: cheia de
+    propaganda e contas."; nome "mailbox" (3 ocorrencias no script) ->
+    "CORREIO C|D"; "antenna" -> "ANTENA C|D"; NPC "Jimmy James" -> "JIMMY
+    C|D". 6 substituicoes em cada versao.
+  - Versao C: copiada como C:\HARVEST\HARVEST.SCR do perfil (523.434 bytes,
+    SHA-256 660E6038...). Versao D: gravada na copia da ISO do disco 1
+    (523.434 bytes, SHA-256 E95F1C1A...), NO LUGAR (setor 37502; cabe nos
+    524.288 bytes alocados), com o tamanho do diretorio ISO atualizado
+    (+1 byte). Extracao conferida. DIALOGUE.IDX e DIALOG.RSP originais.
+    A ISO original manteve SHA-256 DC0F61FF...
+  - Leitura esperada: marcador "C" -> o SCR local tem prioridade (traducao
+    do SCR pode ir para C:\HARVEST, sem ISO); marcador "D" -> o SCR e lido
+    do CD e precisa ir nas ISOs; e tambem confirma gravacao no mesmo setor
+    com tamanho diferente. Nenhum marcador -> investigar.
+  - Aguardando execucao manual pelo usuario. RESULTADO: PENDENTE.
+- RESULTADO DO TESTE 09-SCR-ORIGEM (15/10/2026):
+  - O usuario informou "Tudo D": todos os marcadores visiveis vieram da
+    versao gravada na ISO (letra D); nenhum marcador "C" apareceu.
+  - CONFIRMADO no jogo: (1) HARVEST.SCR e lido do CD (D:); uma copia em
+    C:\HARVEST e ignorada, como aconteceu com o DIALOGUE.IDX. (2) TEXT do
+    SCR traduzido aparece (texto da caixa de correio). (3) Os nomes de
+    objeto/NPC do campo final dos registros OBJECT/NPC sao exibidos
+    (CORREIO D, ANTENA D, JIMMY D), entao precisam ser traduzidos. (4) A
+    gravacao no MESMO setor com tamanho diferente (+1 byte, diretorio ISO
+    atualizado) funciona.
+  - Resumo da origem dos textos confirmada no jogo: DIALOG.RSP e MENU.INI
+    no C:\HARVEST; DIALOGUE.IDX e HARVEST.SCR nas ISOs. O SCR do disco 3 e
+    diferente do disco 1/2 e tera de ser gravado na ISO do disco 3.
+- RESULTADO COMPLEMENTAR DO TESTE 09 (15/10/2026):
+  - O usuario observou que a acao do mouse mostrou "Examine the ANTENA D":
+    o verbo vem do HARVEST.EXE ("Examine the %s", offset 0x1011F1/0x1013B0)
+    e o nome vem do SCR. Os textos fixos do EXE tambem precisam de traducao.
+- SEGUNDO LOTE DE FERRAMENTAS (15/10/2026):
+  - harvester_texto.py ganhou MENU.INI (TRADUCAO-MENU.csv, 18 itens) e
+    textos fixos do EXE (TRADUCAO-EXE.csv, 33 textos visiveis ao jogador:
+    acoes do mouse, "Responses", "your inventory", mensagens de armas, tela
+    de pausa, texto de transicao, senha e 5 falas/topicos fixos no EXE).
+    Mensagens de erro/depuracao do EXE ficaram de fora.
+  - Regras do EXE (edicao no lugar): traducao com no maximo o tamanho do
+    original (resto preenchido com NUL); mesmos especificadores (%s, %i) na
+    mesma ordem; mesmo numero de "/"; o texto no offset precisa ser igual a
+    coluna Original (protege contra EXE diferente). Nas falas fixas do EXE
+    (0xF521D, 0xF5270) a "/" seguida de espacos parece ser quebra de linha.
+  - Novo comando "aplicar": valida tudo, copia a pasta HARVEST, grava RSP,
+    MENU.INI e EXE traduzidos, extrai DIALOGUE.IDX e HARVEST.SCR de CADA ISO,
+    traduz cada um (as variantes de SCR do disco 3 sao tratadas
+    automaticamente) e grava em copias das 3 ISOs; gera JOGAR.conf a partir
+    de um .conf modelo (troca as linhas "mount C" e "imgmount D").
+  - Correcoes no gravar-iso, encontradas no round-trip do aplicar: (1) ao
+    gravar no lugar, a sobra do ultimo setor nao e mais zerada (so o trecho
+    do arquivo antigo); (2) o tamanho do volume no descritor primario so
+    muda quando o arquivo passa do fim do volume (os .ISO originais sao
+    maiores que o volume declarado; antes o campo era alterado sem
+    necessidade, como na ISO do teste 09, que funcionou mesmo assim).
+  - Round-trip do aplicar com planilhas vazias: as 3 ISOs geradas ficaram
+    com SHA-256 identico as originais; DIALOG.RSP, MENU.INI, HARVEST.EXE e
+    HARVEST2.DAT tambem identicos.
+- PRIMEIRO LOTE DE TRADUCAO NA PLANILHA PRINCIPAL TRADUCAO\ (15/10/2026):
+  - IDX: 30 falas do Jimmy (19020-19256). RSP: linhas 246 e 247. SCR: 6
+    textos da frente da casa (grades, caixa de correio, ar-condicionado,
+    disco, fios de alta tensao, antena) e 8 nomes de objeto (casa, caixa de
+    correio, grades de seguranca, janela, ar-condicionado, disco, fios de
+    alta tensao, antena; nomes genericos valem para todo o jogo). MENU.INI:
+    os 18 itens (com espacos de alinhamento preservados nas opcoes). EXE:
+    acoes do mouse (Use %s em %s, Examine %s, Falar: %s, Pegue %s, Acione
+    %s), "Respostas", "seu inventario".
+  - Decisao de estilo nas acoes do EXE: imperativo sem artigo ("Examine
+    antena"), porque o tamanho maximo nao comporta "Examinar o/a %s" e o
+    artigo exigiria saber o genero. "Fale c/ %s" foi rejeitado pela
+    validacao (barra "/"); usado "Falar: %s" (10 caracteres).
+- PREPARACAO DO TESTE 10-PATCH-LOTE1 (15/10/2026):
+  - Gerado com "aplicar" em TESTES-GABARITO-UI\10-PATCH-LOTE1 (JOGAR.conf).
+    Discos 1/2: IDX 270.924 bytes e SCR 523.486 bytes, ambos no lugar; disco
+    3: IDX no lugar e SCR com 1 substituicao. Hashes do IDX/SCR extraidos de
+    cada ISO conferidos. HARVEST.EXE traduzido SHA-256 32CE97FF...; MENU.INI
+    2F8B413F...; DIALOG.RSP 70F8C973... ISOs originais intactas (disco 1
+    DC0F61FF...).
+  - Novidades a confirmar no jogo: EXE editado (acoes do mouse, Respostas,
+    seu inventario) e MENU.INI completo. O resto ja foi confirmado nos testes
+    05-09.
+  - Aguardando execucao manual pelo usuario. RESULTADO: PENDENTE.
+- RESULTADO DO TESTE 10-PATCH-LOTE1 (15/10/2026):
+  - Menu: em portugues. Acoes do mouse do EXE ("Examine", "Falar:", etc.) e
+    nomes de objeto do SCR apareceram em portugues na frente da casa e
+    dentro da casa (Hank: acao em portugues; o nome Hank nao e traduzido).
+    EXE editado no lugar funcionou, sem travamento.
+  - Textos de examinar em portugues ("Um 'Lima Space Disc' fluorescente
+    preso no telhado." etc.). PROBLEMA: o ar-condicionado (TEXT PC_AC_LTEXT,
+    caixa BOX1) quebrou em duas linhas ("Um ar-condicionado de sobra do" /
+    "exercito.") e a segunda linha ficou fora da moldura. Conclusao: BOX1 e
+    uma caixa de UMA linha; a quebra ocorreu antes de ~40 caracteres. As
+    outras caixas testadas (BOX2/BOX4) couberam.
+  - Jimmy: falas do Jimmy em portugues, mas as falas do Steve em ingles.
+    Causa: 9 falas do Steve (falante PC no mapa do EXE, IDs 19026, 19056,
+    19082, 19114, 19204, 19212, 19221, 19237, 19245) estao na mesma faixa
+    de IDs do Jimmy e nao entraram no lote, que usou so o falante JIMMY.
+    O usuario teve a impressao de que uma fala do Steve "pulou"; nao
+    confirmado. A sequencia do EXE e: Jimmy 19020 -> Steve 19026 -> Jimmy
+    19032 -> menu RSP 245 (nunca visto na tela) -> ... Observar de novo
+    com as falas do Steve traduzidas.
+  - Inventario: nada mudou. Esperado: os nomes/descricoes do inventario
+    vem do SCR (ex.: "Harvest blade, right click to arm/disarm", "Health
+    indicator") e ainda nao foram traduzidos; "your inventory" do EXE nao
+    foi visto nesse teste.
+- CORRECOES APOS O TESTE 10 (15/10/2026):
+  - Falas do Steve: as 9 acima traduzidas na planilha principal TRADUCAO.
+    Licao para os proximos lotes: traduzir por FAIXA DE IDs/conversa, nao
+    so por falante.
+  - Caixas: nova coluna NovaCaixa em TRADUCAO-SCR.csv (BOX1..BOX4, so para
+    TEXT). O construir troca o campo de caixa do TEXT no SCR. Ainda falta
+    saber a capacidade de cada caixa (teste 11).
+  - exportar --force agora MANTEM as colunas Traducao/NovaCaixa ja
+    preenchidas (casadas por chave + Original); se alguma nao casar, nada e
+    gravado. Testado: re-exportacao manteve 16/30/18/2/14 traducoes.
+- PREPARACAO DO TESTE 11-REGUA-CAIXAS (15/10/2026):
+  - Copia da planilha principal com reguas "01 02 03 ..." (cada numero
+    ocupa 3 posicoes; o ultimo numero da linha N indica 3N-1 caracteres)
+    em PC_AC_LTEXT (BOX1, 59 chars), PC_MAILBOX_LTEXT (BOX2, 119),
+    PC_ANTENNA_LTEXT (trocado de BOX2 para BOX3, 179) e PC_PLINE_LTEXT
+    (BOX4, 239). Verificado no SCR gravado na ISO: caixas BOX1/BOX2/BOX3/
+    BOX4 nos quatro textos. Gerado com aplicar em
+    TESTES-GABARITO-UI\11-REGUA-CAIXAS (JOGAR.conf); inclui as falas do
+    Steve.
+  - Objetivo: medir caracteres por linha e linhas por caixa, e confirmar
+    que trocar a caixa (BOX2 -> BOX3) funciona. Com isso o construir podera
+    avisar quando uma traducao nao cabe e sugerir a caixa.
+  - Aguardando execucao manual pelo usuario. RESULTADO: PENDENTE.
+- RESULTADO DO TESTE 11-REGUA-CAIXAS (15/10/2026):
+  - Ultimo numero dentro da moldura: ar-condicionado BOX1 = 13; caixa de
+    correio BOX2 = 26; antena (trocada para BOX3) = 39; fios BOX4 = 65.
+    Ultimo numero exibido (texto inteiro): 20, 40, 60, 80, sem corte e sem
+    travamento, mesmo com 239 caracteres.
+  - CONCLUSAO: 13 numeros "NN " por linha = 38 caracteres por linha (fonte
+    de largura fixa); BOX1 = 1 linha, BOX2 = 2, BOX3 = 3, BOX4 = 5. Texto
+    alem da moldura continua sendo desenhado (so problema visual). Trocar a
+    caixa de um TEXT (BOX2 -> BOX3) funciona.
+- LOTE 3 DE FERRAMENTAS (15/10/2026):
+  - construir calcula as linhas de cada TEXT do SCR (quebra por palavra em
+    38 caracteres) e, se nao couber na caixa, troca automaticamente para a
+    menor caixa que cabe (aviso no relatorio); acima de 5 linhas, erro.
+    Tambem avisa sobre falas do IDX mais longas que a maior original e
+    opcoes do RSP maiores que a maior original.
+  - DESCOBERTA SOBRE TOPICOS: o RSP tem 217 linhas de opcoes ("1. .../2. ...")
+    e 589 linhas de topicos (308 textos distintos; 81 em MAIUSCULAS, 41 com
+    par em caixa mista, ex.: "Hank"/"HANK"). A rotina 0xE1D8E do EXE e um
+    stricmp (compara byte a byte convertendo A-Z para minusculas; igualdade
+    exata). Ela e chamada com textos fixos do EXE: "Lodge" e "The Lodge"
+    (0x8BE20-0x8BE3C), "BYE" (0xF6624), "Arsonist", "LOOMIS", "Phelps",
+    "Man's Needs", e em 128 chamadas com textos nao fixos (provavelmente as
+    palavras-chave do RSP). Conclusao: o NPC reconhece o topico por
+    IGUALDADE sem diferenciar maiusculas. "BYE" e o texto que encerra a
+    conversa: traduzir so no RSP prenderia o jogador na conversa.
+  - Novo GLOSSARIO-TOPICOS.csv (263 entradas): os topicos sao traduzidos por
+    glossario unico, aplicado a todas as linhas de topico do RSP sem
+    traducao explicita; formas MAIUSCULAS/minusculas usam a mesma traducao
+    em MAIUSCULAS/minusculas. Validacao: textos iguais em ingles continuam
+    iguais, diferentes continuam diferentes (ex.: "Wedding" e "Marriage"
+    nao podem virar ambos "Casamento"). Os textos fixos do EXE comparados
+    com topicos recebem a traducao do glossario automaticamente, sem passar
+    do tamanho original ("The Lodge" -> "O Lodge", "BYE" -> "FIM"). O bloco
+    de menu do RSP (linhas 784-806) fica em ingles (o jogo usa o MENU.INI).
+  - Decisoes do glossario: "Lodge" mantido como nome proprio ("o Lodge";
+    "Loja" confundiria com a loja da cidade); nomes de pessoas mantidos;
+    Mr./Mrs. -> Sr./Sra.; Sheriff -> Xerife; PTA -> APM; Bake Sale -> Bazar;
+    Charity Bake Sale -> Bazar Beneficente; BYE -> FIM; Wedding -> Casamento
+    e Marriage -> Matrimonio; Paper -> Jornal e Newspaper -> O Jornal.
+  - exportar tambem gera/preserva o glossario.
+- LOTE 2 DE TRADUCAO (15/10/2026):
+  - SCR: 151 itens do inicio do jogo (linhas < 1003 do SCR dos discos 1/2:
+    inventario, quarto do Steve, gaveta, sala, cozinha, frente da casa,
+    quarto dos pais; nomes de objetos e NPCs Mae/Pai). 15 textos tiveram a
+    caixa aumentada automaticamente (ex.: itens do inventario "...; botao
+    direito: ver" passaram de BOX1 para BOX2).
+  - IDX: 301 falas das conversas da Mae e do Pai, incluindo as falas do
+    Steve intercaladas e as falas na mesma faixa de IDs sem chamada direta
+    no mapa (marcadas CUT/DUPE mantidas com o prefixo). Total no IDX: 340.
+  - RSP: 10 linhas de opcoes numeradas dessas conversas; topicos pelo
+    glossario (476 linhas).
+- PREPARACAO DO TESTE 12-PATCH-LOTE2 (15/10/2026):
+  - Gerado com aplicar em TESTES-GABARITO-UI\12-PATCH-LOTE2 (JOGAR.conf); a
+    copia exata das planilhas usadas esta em TRADUCAO-USADA. IDX 270.451
+    bytes, SCR disco 1/2 523.761, disco 3 335.598, todos no lugar. HARVEST.EXE
+    com "O Lodge" e "FIM" sincronizados (SHA-256 F9C9EE00...). ISO original
+    do disco 1 intacta (DC0F61FF...).
+  - Pontos criticos a observar: escolher topicos com a Mae (a resposta
+    certa precisa aparecer para cada topico) e encerrar a conversa com FIM;
+    caixas aumentadas no inventario; textos da casa.
+  - Aguardando execucao manual pelo usuario. RESULTADO: PENDENTE.
+- RESULTADO DO TESTE 12-PATCH-LOTE2 (15/10/2026):
+  - Usuario: cozinha aparentemente toda traduzida e dentro das molduras;
+    conversa com a Mae ate o fim e "FIM" encerrou a conversa. CONFIRMADO o
+    mecanismo de topicos (glossario + "BYE" -> "FIM" sincronizado no EXE).
+- ESTRATEGIA PARA O JOGO TODO (15/10/2026):
+  - Todos os mecanismos ja foram confirmados no jogo (RSP, IDX com mudanca
+    de tamanho/posicao na ISO, SCR com troca de caixa, MENU.INI, EXE no
+    lugar, topicos). O restante e conteudo; os riscos de conteudo sao
+    verificados automaticamente pelo construir (caixas, topicos, tamanho
+    no EXE, %s e "/", ASCII). Novo comando "status" mostra a cobertura.
+    Plano: traduzir o restante em lotes grandes sem teste intermediario e
+    fazer uma passada geral no fim (vozes e textos desenhados em imagens
+    ficam fora do escopo).
+  - Cobertura neste ponto: IDX 340/2533, RSP opcoes 12/217, SCR 165/1434,
+    glossario 236/263 (o resto e o bloco de menu, mantido), MENU 18/18,
+    EXE 16/31; total 17,5%.
+- LOTE 3 DE TRADUCAO (15/10/2026, em andamento):
+  - RSP: todas as 217 linhas de opcoes numeradas traduzidas (100%). EXE:
+    31/31 textos fixos (inclui tela de pausa com "Tecle algo para
+    continuar" na mesma posicao, texto de transicao do disco 3, mensagens
+    de armas encurtadas para caber, ex.: "Arma: %s, %i balas...").
+  - IDX: traducao em blocos por ordem de ID (as IDs vem agrupadas por
+    conversa): IDs 1-10867 concluidos (Boyle, Sparky e bombeiros, Range
+    Ryder, Galeria, Diretor de Socios, Hank, Johnson, Sacerdote, zelador,
+    Parsons/Swell, Valet, Karin, Loomis, Mendigo, Whaley/Herrill, Madame,
+    McKnight, Coronel Monroe, Inquisidor, acougueiro Pat, Chef do Lodge,
+    Sra. Phelps, Bibliotecaria, Mae do Templo, Sr. e Sra. Pottsdam).
+    Cobertura do IDX neste ponto: ~1480/2533. Cada bloco passa pela
+    verificacao de ASCII antes de entrar na planilha.
+  - Linhas originais do IDX com aspa solta no inicio (ex.: 4449, 8500,
+    9443) foram traduzidas sem a aspa extra.
+- IDX CONCLUIDO (15/10/2026): as 2.533 falas do DIALOGUE.IDX estao
+  traduzidas (IDs 1 a 20000, incluindo linhas CUT/DUPE com o prefixo e
+  "junk init"/"junk end" mantidos). O construir completo (RSP + IDX + SCR
+  dos discos 1/2 e 3 + MENU + EXE) passou sem erros e sem avisos de
+  tamanho no IDX. Cobertura total: 71,2% (IDX, RSP opcoes, MENU e EXE em
+  100%; SCR 165/1434; glossario 236/263, o resto e o bloco de menu mantido
+  em ingles de proposito).
+  - Termos recorrentes usados nas falas (para consistencia com o glossario):
+    Lodge (mantido), Ordem da Lua de Harvest, Sargento de Armas, Diretor de
+    Socios, Agente Postal Boyle, Xerife Dwayne, Ajudante Loomis, APM, Bazar
+    (Beneficente), Doacao de Sangue, ficha (= application), Iniciacao/
+    Iniciado, carta 'Saida Livre da Prisao', Cola Astro, Hotel Wayward,
+    Funeraria Shady Oaks, Lanchonete DNA / Lanchonete da Edna, matadouro,
+    frigorifico, Mulher-Vespa, Grao-Mandachuva.
+- SCR CONCLUIDO E PATCH COMPLETO (15/10/2026):
+  - TRADUCAO-SCR.csv 1434/1434: 61 nomes de NPC, 557 nomes de objeto, 816
+    TEXT (descricoes, inventario, avisos), dos SCR dos discos 1/2 e 3. Nomes
+    proprios iguais em portugues (Stephanie, Karin, Hank, P-51 Mustang...)
+    marcados com a traducao igual ao original; "NULL ID" (interno) mantido.
+  - Cobertura final: 4469/4496 (99,4%). Os 27 restantes sao o bloco de menu
+    do RSP (linhas 784-806 e "%s"), mantidos em ingles de proposito porque o
+    jogo usa o MENU.INI (ja traduzido).
+  - construir: sem erros; 78 caixas aumentadas automaticamente (48 no SCR
+    dos discos 1/2, 30 no disco 3); nenhum texto passou de 5 linhas.
+  - aplicar em TESTES-GABARITO-UI\13-PATCH-COMPLETO (JOGAR.conf):
+    DIALOGUE.IDX 266.278 bytes (menor que o original) gravado no lugar nos
+    3 discos; HARVEST.SCR cresceu (524.395 bytes nos discos 1/2, 336.863 no
+    disco 3) e foi gravado no FIM de cada imagem (diretorio ISO e tamanho
+    do volume atualizados). Extracao conferida nos 3 discos. ISO original
+    do disco 1 intacta (DC0F61FF...). Planilhas usadas copiadas em
+    13-PATCH-COMPLETO\TRADUCAO-USADA.
+  - Mecanismo novo neste perfil, ainda nao visto no jogo: HARVEST.SCR
+    movido para o fim da imagem (o mesmo metodo ja confirmado com o IDX no
+    teste 08; o SCR so tinha sido testado no lugar, teste 09).
+  - Aguardando a passada geral do usuario. RESULTADO: PENDENTE.
+- PACOTE PORTATIL PATCH-PTBR-HARVESTER (15/10/2026):
+  - Pasta na raiz do projeto para instalar a traducao em outro PC (versao
+    Steam, app 287020; o DOSBox da Steam usa caminhos relativos ..\HARVEST e
+    ..\HARVEST_CD, entao basta substituir 6 arquivos). Conteudo: HARVEST\
+    (DIALOG.RSP, MENU.INI, HARVEST.EXE) e HARVEST_CD\ (3 ISOs) copiados do
+    perfil 13; INSTALAR.bat/.ps1, RESTAURAR.bat/.ps1, LEIA-ME.txt e
+    FERRAMENTA\ (harvester_texto.py, xfle_tool.py e as planilhas usadas).
+  - INSTALAR.ps1 confere o SHA-256 dos 6 arquivos do jogo (so aceita a
+    mesma versao original ou ja traduzida; versao diferente -> nada e
+    alterado), guarda os originais em <jogo>\BACKUP-ORIGINAL-PTBR, copia os
+    traduzidos e confere o hash depois de copiar. RESTAURAR.ps1 devolve os
+    originais do backup. LEIA-ME explica onde fica a pasta do jogo, o
+    jeito manual, os hashes e como gerar o patch a partir de outra versao
+    com a ferramenta.
+  - Testado numa copia simulada da pasta do jogo (HARVEST + ISOs
+    originais): instalacao (hashes traduzidos conferidos), segunda execucao
+    (reconhece "ja esta traduzido") e restauracao (hashes originais de
+    volta). Pasta de teste removida.
+- IMAGENS DA INTERFACE (15/10/2026, pedido do usuario apos jogar a v1):
+  - O usuario relatou textos nao traduzidos na "tela de carregamento" e no
+    inventario. Causa: sao IMAGENS (.BM) dentro do HARVEST.DAT, nao texto.
+  - Formato XFLE do HARVEST.DAT confirmado: cada registro tem cabecalho
+    fixo de 148 bytes ("XFLE", slot, ":", caminho com preenchimento) e em
+    +132 quatro uint32: offset absoluto dos dados (= inicio do registro +
+    148), tamanho, 0, tamanho. (O "0x94" do primeiro registro era so o
+    offset 148.) Formato .BM: uint32 largura, altura, campo sem uso (lixo
+    de memoria), depois largura*altura bytes de indices de paleta, sem
+    compressao. .PAL: 768 bytes VGA de 6 bits.
+  - Fontes .CFT decodificadas: nome[64]; u16 @64; u16 inicio[256] @66;
+    u16 largura[256] @578; u16 espaco @1090; BM da faixa de glifos @1096.
+    TEXTFONT/TEXTFNT2 12 px, MEDFONT1/2 17 px, HARVFONT/HARVFNT2 47 px,
+    SMALFONT 8 px, FONTWT2 10 px; TYPEFONT tem outro layout (nao usado).
+    Nenhuma fonte tem o caractere "+": e montado a partir do "-".
+  - Imagens com texto em ingles encontradas: CD1/CD2/CD3 (troca de disco:
+    "PRESS CTRL+F4 AND CLICK LEFT MOUSE BUTTON"), LOADGAME/SAVEGAME,
+    INVENTRY/INVNTORY ("25 CENTS", "SPRING 1953", "EXIT"), TIPS, KEYWORD,
+    RESPONSE, CONVBOX ("CUSTOM ENTRY:"), KEYSHELP/MOUSHELP/JOYSHELP (ajuda),
+    GAMEOVER, EXITSIGN, MERT0119 (logo da Merit, mantido).
+  - Traduzidas nesta etapa (gerador TRADUCAO\IMAGENS\GERADOR\imgedit.py):
+    troca de disco "APERTE CTRL+F4 E CLIQUE COM O BOTAO ESQUERDO" (MEDFONT,
+    preto solido); CARREGAR JOGO / Escolha um jogo para carregar /
+    CANCELAR; SALVAR JOGO / SALVAR / CANCELAR; DICAS DE JOGO; Palavra-Chave;
+    Respostas; DIGITAR:; inventario 25 CENTAVOS, PRIMAVERA 1953 e SAIR (o
+    texto antigo e apagado repetindo uma faixa de papel limpo vizinha e o
+    novo e desenhado com a tinta original: miolo indice 24, contorno 19).
+    Pre-visualizacoes conferidas visualmente (as cores do inventario ficam
+    erradas fora do jogo porque a paleta dele e carregada em tempo real).
+  - Pendentes de proposito: telas de ajuda de teclado/mouse/joystick (muito
+    texto sobre fundo texturizado) e GAME OVER (letreiro grande desenhado).
+  - Aplicacao: TRADUCAO\IMAGENS\MANIFESTO.csv lista sha256 original, sha256
+    novo e caminho; <sha original>.BM e a imagem editada (mesmo tamanho). O
+    aplicar procura no HARVEST.DAT de cada ISO todo registro cujo conteudo
+    tem um sha256 original do manifesto (inclui copias com nomes em
+    maiusculas/minusculas) e grava a versao nova no lugar. 10 originais
+    distintos (discos 1/2 e 3 tem versoes diferentes de LOADGAME).
+    Resultado: 8 imagens trocadas nos discos 1 e 2, 11 no disco 3. DAT do
+    disco 3 conferido: mesmo tamanho, mesmos 830 registros, so 45 blocos de
+    4 KB alterados; imagens extraidas de volta conferidas.
+  - Perfil TESTES-GABARITO-UI\14-PATCH-IMAGENS (JOGAR.conf) e pacote
+    PATCH-PTBR-HARVESTER atualizados (versao 2): ISOs novas (SHA-256
+    0C1396EB.../216D1596.../4BD8DEBF...), HARVEST\ igual a v1. INSTALAR.ps1
+    reconhece a v1 instalada e atualiza sem acusar versao diferente; testado
+    instalacao nova, atualizacao a partir da v1 e restauracao.
+  - Aguardando teste do usuario no PC dele. RESULTADO: PENDENTE.
+- AUDITORIA DA TRADUCAO NOS ARQUIVOS FINAIS (15/10/2026, pedido do usuario):
+  - Script de auditoria (scratchpad audit.py) le os arquivos GERADOS (IDX e
+    SCR extraidos das ISOs do perfil, RSP, MENU e EXE) e marca textos com
+    palavras tipicas do ingles. Resultado antes das correcoes: IDX 0
+    suspeitos; MENU ok; RSP so "FOR" (palavra-chave mantida de proposito);
+    SCR: 1 TEXT em ingles e 26 nomes de lugar do mapa; EXE: 88 strings.
+  - Defeito 1 (corrigido): TEXT TRIGER_DNA_ALARM ("One major deterrent to
+    the art of arson...") mistura "_" e espacos reais no original; o
+    construir comparava convertendo espacos em "_" e nao achava. Agora a
+    planilha SCR e casada pelo texto exibido (scr_to_display) dos dois lados.
+  - Defeito 2 (corrigido): registros MAP_LOCATION (nomes dos lugares no mapa
+    da cidade, primeiro campo entre aspas) nao eram lidos. Novo tipo
+    NOME_MAPA no SCR: 19 nomes unicos traduzidos (Barbearia, Armazem, O
+    Lodge, Base de Misseis, Sua Casa, Correio, Casa dos Pottsdam, Casa do
+    Johnson, Funeraria Shady Oaks, Cemiterio, Casa Abandonada, Lanchonete da
+    Edna, Frigorifico, Escola Gein Memorial, Estacao de TV, Hotel Wayward,
+    Quartel dos Bombeiros, Delegacia, Predio do Jornal). So existem nos SCR
+    dos discos 1/2.
+  - EXE: textos visiveis que faltavam, agora traduzidos no lugar: " - On" /
+    " - Off" do menu de opcoes (" -Sim" / " -Nao", limite de 5 bytes),
+    calibracao do joystick ("MOVA O JOYSTICK" + ESQUERDA/DIREITA/CIMA/BAIXO
+    + "E APERTE O BOTAO"), "DRIVE DE CD NAO PRONTO!" e "TENTE DE NOVO...".
+    A validacao barrou "P/" (barra nova) e foi trocado. As 75 strings
+    restantes do EXE sao mensagens tecnicas/depuracao (erros de memoria,
+    VESA, driver de som, interpretador do script) que nao aparecem em jogo
+    normal.
+  - Depois das correcoes: IDX 0, SCR so falsos positivos (pin-up etc.), RSP
+    so "FOR". Cobertura 4488/4515 (99,4%; o resto e o bloco de menu do RSP).
+  - Verificados tambem: as 8 animacoes FLC do disco 3 (decodificador FLC
+    proprio): xadrez e cursores, sem texto. Documentos legiveis com o botao
+    direito sao IMAGENS com texto em ingles (CLUE manuscrito, BOYLNOTE
+    manuscrito, INVITE caligrafico, LODGAPP1/2 formulario, SAFEBOOK, jornais
+    NEWSPAPR/NEWSCU, PERMIT1/2, TVDEED1/2, REGISTER/RGSTRCPY, SCHEDULE,
+    AUTOGRPH, BAKESALE, EVIDENCE, DRTYMAG, KNIGHTS...): ainda nao traduzidos
+    (reescrever perderia a letra manuscrita/caligrafica; pendente de decisao
+    do usuario). Tambem pendentes: telas de ajuda e GAME OVER.
+  - Perfil TESTES-GABARITO-UI\15-PATCH-REVISADO e pacote
+    PATCH-PTBR-HARVESTER versao 3: HARVEST.EXE 1CC79C8B..., DISC1
+    DF816448..., DISC2 7DCBE5B4..., DISC3 igual a v2 (4BD8DEBF...); RSP e
+    MENU iguais. INSTALAR reconhece v1 e v2 (testado atualizando EXE e DISC1
+    da v2). RESULTADO NO JOGO: PENDENTE.
+
+
+==========================================================================
+PATCH LEVE SEM ISOs (PATCH-PTBR-HARVESTER-LEVE) - 2026-10-15
+==========================================================================
+Motivo: nao distribuir os discos do jogo (direitos autorais / limite do GitHub).
+- gerar_diff.py (raiz e FERRAMENTA): compara original x traduzido em blocos de 1 MB e grava
+  so os trechos diferentes. Formato .hvp = gzip de "HVP1" + u64 tamanho final + u32 n trechos
+  + (u64 offset, u32 tam, bytes)*. MANIFESTO.csv: arquivo,hvp,sha_original,sha_traduzido,tamanho.
+- Tamanhos: DISC1 202.363 B, DISC2 202.384 B, DISC3 165.874 B, EXE 849 B, RSP 9.811 B,
+  MENU 265 B. Pasta inteira 3,4 MB (com FERRAMENTA); zip 1,26 MB.
+- INSTALAR.ps1 (so PowerShell, sem Python): confere SHA de cada arquivo -> original: faz
+  backup em BACKUP-ORIGINAL-PTBR e aplica; ja traduzido v3: pula; versao antiga (v1/v2) com
+  backup original: restaura do backup e aplica; qualquer outro: "VERSAO DIFERENTE" e aborta
+  sem mexer em nada. Depois de aplicar confere o SHA final; se falhar, volta o backup.
+- RESTAURAR.ps1/.bat iguais aos do pacote v3 (mesma pasta de backup).
+- README.md/LEIA-ME.txt sem link do Drive; .gitignore bloqueia ISO/EXE.
+
+TESTE (pasta simulada %TEMP%\JogoTeste com HARVEST + ISOs originais):
+  1) instalar sobre originais: EXE, RSP, DISC1, DISC3 identicos ao v3 (SHA) -> OK
+  2) instalar de novo: "ja esta traduzido" em todos -> OK
+  3) EXE e DISC1 trocados pela v2: "traducao antiga; sera atualizado" -> DISC1 identico ao v3 -> OK
+  4) RESTAURAR: DISC1 voltou ao original -> OK
+Nenhum arquivo do jogo dentro do pacote (conferido por extensao).
+Os ISOs no Google Drive nao sao mais necessarios.

@@ -1,0 +1,9 @@
+# Nunca subir arquivos do jogo
+*.ISO
+*.iso
+*.EXE
+*.exe
+# Backups e saidas geradas pela ferramenta
+BACKUP-ORIGINAL-PTBR/
+NOVO-PATCH/
+__pycache__/

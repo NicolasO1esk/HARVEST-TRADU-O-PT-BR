@@ -121,6 +121,12 @@ def scr_items(lines: list[str]):
                 ident = fields[1].group(1)
                 last = fields[-1]
                 yield n, "NOME_" + kw.group(1), ident, "", last.start(1), last.end(1)
+            continue
+        # nome de lugar no mapa da cidade: MAP_LOCATION "Nome_Exibido" "ID"
+        if re.match(r"^\s*(?:-?\d+\s+)*MAP_LOCATION\s", line):
+            fields = list(QUOTED.finditer(line))
+            if len(fields) >= 2 and fields[0].group(1):
+                yield n, "NOME_MAPA", fields[1].group(1), "", fields[0].start(1), fields[0].end(1)
 
 
 def scr_to_display(raw: str) -> str:
@@ -251,6 +257,13 @@ EXE_TEXTS = [
     (0x0F521D, "opcao de dialogo fixa no EXE (/ separa opcoes)"),
     (0x0F5270, "opcao de dialogo fixa no EXE (/ separa opcoes)"),
     (0x0F6587, "opcao de dialogo fixa no EXE (/ separa opcoes)"),
+    (0x100669, "menu de opcoes: sufixo ligado"), (0x100676, "menu de opcoes: sufixo ligado"),
+    (0x10066F, "menu de opcoes: sufixo desligado"), (0x10067C, "menu de opcoes: sufixo desligado"),
+    (0x0F2DF7, "calibracao do joystick"), (0x0F2E0E, "calibracao do joystick"),
+    (0x0F2E1F, "calibracao do joystick"), (0x0F2E38, "calibracao do joystick"),
+    (0x1054AC, "calibracao do joystick (direcao)"), (0x1054BB, "calibracao do joystick (direcao)"),
+    (0x1054CA, "calibracao do joystick (direcao)"), (0x1054D9, "calibracao do joystick (direcao)"),
+    (0x0FBD3E, "aviso de CD"), (0x0FBD63, "aviso de CD"),
     # "The Lodge"/"Man's Needs" sao topicos comparados por stricmp: vem do glossario
 ]
 PRINTF = re.compile(r"%[-+ #0-9.]*[a-zA-Z]")
@@ -670,7 +683,8 @@ def build_texts(t: Path, rsp_bytes: bytes, idx_bytes: bytes, scrs: list[tuple[st
     scr_tr, scr_box = {}, {}
     for r in read_csv(t / "TRADUCAO-SCR.csv"):
         tr = r["Traducao"]
-        key = (r["Tipo"], display_to_scr(r["Original"]))
+        # chave pelo texto exibido: o original pode misturar "_" e espacos de verdade
+        key = (r["Tipo"], r["Original"])
         box = r.get("NovaCaixa", "").strip().upper()
         if box:
             if r["Tipo"] != "TEXT" or not re.fullmatch(r"BOX[1-4]", box):
@@ -759,7 +773,7 @@ def build_texts(t: Path, rsp_bytes: bytes, idx_bytes: bytes, scrs: list[tuple[st
         lines, tail = split_crlf(xor_aa(data))
         changed = boxes = 0
         for n, kind, ident, box, s, e in sorted(scr_items(lines), key=lambda x: -x[4]):
-            orig = lines[n][s:e]
+            orig = scr_to_display(lines[n][s:e])
             new = scr_tr.get((kind, orig))
             if new is not None:
                 lines[n] = lines[n][:s] + new + lines[n][e:]
@@ -802,6 +816,46 @@ def cmd_construir(a) -> int:
     return 0
 
 
+def load_image_patches(t: Path) -> dict[str, bytes]:
+    """TRADUCAO/IMAGENS: MANIFESTO.csv (sha_original,sha_novo,caminho) + <sha_original>.BM editados."""
+    d = t / "IMAGENS"
+    out = {}
+    if not (d / "MANIFESTO.csv").exists():
+        return out
+    for line in (d / "MANIFESTO.csv").read_text(encoding="ascii").splitlines():
+        if not line.strip():
+            continue
+        orig, new, _path = line.split(",", 2)
+        data = (d / f"{orig}.BM").read_bytes()
+        if sha256(data) != new:
+            raise ValueError(f"IMAGENS: {orig}.BM nao confere com o manifesto")
+        out[orig] = data
+    return out
+
+
+def patch_dat_images(iso_path: Path, patches: dict[str, bytes]) -> int:
+    """Substitui no lugar (mesmo tamanho) os registros do HARVEST.DAT cujo conteudo original esta no manifesto."""
+    if not patches:
+        return 0
+    with iso_path.open("r+b") as iso:
+        _, extent, size = iso_find_record(iso, "HARVEST.DAT")
+        base = extent * SECTOR
+        iso.seek(base)
+        dat = iso.read(size)
+        n = 0
+        for m in re.finditer(rb"XFLE.:(\\[^\x00]{1,120})\x00", dat, re.S):
+            off = m.start()
+            data_off, dsize, _z, dsize2 = struct.unpack_from("<IIII", dat, off + 132)
+            if data_off != off + 148 or dsize != dsize2:
+                continue
+            new = patches.get(sha256(dat[data_off:data_off + dsize]))
+            if new is not None and len(new) == dsize:
+                iso.seek(base + data_off)
+                iso.write(new)
+                n += 1
+    return n
+
+
 def iso_read(iso_path: Path, path_in_iso: str) -> bytes:
     with iso_path.open("rb") as iso:
         _, extent, size = iso_find_record(iso, path_in_iso)
@@ -840,6 +894,7 @@ def cmd_aplicar(a) -> int:
     for name, data in local.items():
         (out / "HARVEST" / name).write_bytes(data)
     new_isos = []
+    patches = load_image_patches(a.traducao)
     for iso, files in plans:
         dst = out / iso.name
         tmp = dst.with_name(dst.name + ".tmp")
@@ -848,6 +903,8 @@ def cmd_aplicar(a) -> int:
             for inner in ("DIALOGUE.IDX", "HARVEST.SCR"):
                 how = iso_replace(tmp, inner, files[inner])
                 report.append(f"  {iso.name} {inner}: {how}")
+            if patches:
+                report.append(f"  {iso.name} HARVEST.DAT: {patch_dat_images(tmp, patches)} imagens traduzidas")
             tmp.replace(dst)
         finally:
             tmp.unlink(missing_ok=True)
