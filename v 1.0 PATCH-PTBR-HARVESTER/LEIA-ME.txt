@@ -1,0 +1,95 @@
+TRADUÇÃO PT-BR DO HARVESTER (versão Steam)
+==========================================
+
+O que vem nesta pasta
+---------------------
+HARVEST\DIALOG.RSP              -> opções de resposta e tópicos de conversa
+HARVEST\MENU.INI                -> menu principal e de opções
+HARVEST\HARVEST.EXE             -> ações do mouse ("Examine", "Pegue"...), pausa, etc.
+HARVEST_CD\HARVESTER_DISC1.ISO  -> disco 1 com falas e textos traduzidos
+HARVEST_CD\HARVESTER_DISC2.ISO  -> disco 2 com falas e textos traduzidos
+HARVEST_CD\HARVESTER_DISC3.ISO  -> disco 3 com falas e textos traduzidos
+INSTALAR.bat / INSTALAR.ps1     -> instala sozinho (recomendado)
+RESTAURAR.bat / RESTAURAR.ps1   -> volta os arquivos originais
+FERRAMENTA\                     -> ferramenta e planilhas da tradução (só se precisar refazer)
+
+As legendas ficam em português; as vozes continuam em inglês.
+Para ver as legendas, a opção TEXTO do menu de opções precisa estar ligada.
+
+
+Onde fica a pasta do jogo
+-------------------------
+Na Steam: clique com o botão direito em Harvester > Gerenciar > Explorar arquivos locais.
+Normalmente é:
+    C:\Program Files (x86)\Steam\steamapps\common\Harvester
+Dentro dela existem as pastas HARVEST e HARVEST_CD (e dosbox_windows).
+
+
+JEITO FÁCIL (recomendado)
+-------------------------
+1. Feche o jogo.
+2. Dê dois cliques em INSTALAR.bat.
+3. Digite a pasta do jogo (ou só aperte Enter se for o caminho padrão acima).
+4. Ele confere se os seus arquivos são a mesma versão, guarda os originais em
+   <pasta do jogo>\BACKUP-ORIGINAL-PTBR e copia os traduzidos.
+   Conferir as ISOs demora um pouco; espere a mensagem verde.
+5. Abra o jogo pela Steam normalmente.
+
+Para desfazer: dois cliques em RESTAURAR.bat.
+
+
+JEITO MANUAL (se preferir)
+--------------------------
+1. Feche o jogo.
+2. Faça uma cópia de segurança dos 6 arquivos originais (lista abaixo).
+3. Copie, substituindo:
+     PATCH\HARVEST\DIALOG.RSP              ->  <pasta do jogo>\HARVEST\DIALOG.RSP
+     PATCH\HARVEST\MENU.INI                ->  <pasta do jogo>\HARVEST\MENU.INI
+     PATCH\HARVEST\HARVEST.EXE             ->  <pasta do jogo>\HARVEST\HARVEST.EXE
+     PATCH\HARVEST_CD\HARVESTER_DISC1.ISO  ->  <pasta do jogo>\HARVEST_CD\HARVESTER_DISC1.ISO
+     PATCH\HARVEST_CD\HARVESTER_DISC2.ISO  ->  <pasta do jogo>\HARVEST_CD\HARVESTER_DISC2.ISO
+     PATCH\HARVEST_CD\HARVESTER_DISC3.ISO  ->  <pasta do jogo>\HARVEST_CD\HARVESTER_DISC3.ISO
+   (PATCH = esta pasta)
+4. Abra o jogo pela Steam.
+
+
+Cuidados
+--------
+- NÃO use "Verificar integridade dos arquivos" na Steam: ela troca os arquivos de volta
+  para o inglês. Se isso acontecer, é só rodar o INSTALAR.bat de novo.
+- Saves antigos continuam funcionando (a tradução não muda a lógica do jogo).
+- O HARVEST.EXE traduzido só serve para a mesma versão do jogo. Por isso o instalador
+  confere os arquivos antes de copiar.
+
+
+Se a versão for diferente
+-------------------------
+Se o INSTALAR.bat disser "VERSAO DIFERENTE", nada foi alterado. Nesse caso a tradução pode
+ser gerada a partir dos SEUS arquivos (precisa do Python 3 instalado), abrindo o PowerShell
+dentro da pasta FERRAMENTA:
+
+    python harvester_texto.py aplicar --traducao TRADUCAO --jogo "<pasta do jogo>\HARVEST" --isos "<pasta do jogo>\HARVEST_CD" --saida NOVO-PATCH
+
+Ela valida tudo antes e cria NOVO-PATCH\HARVEST e as 3 ISOs traduzidas, sem mexer no jogo.
+Se a versão for muito diferente, ela avisa quais textos não bateram.
+
+
+Conferência (SHA-256)
+---------------------
+Arquivo                          Original (inglês)                                                  Traduzido
+HARVEST\DIALOG.RSP               81C37E0711B42450A7CC5FEBAA748C2860C5304DD29BEE93E4EDDA34BDCBE85A  FFF47F8842C3B32F0FB1A2448C7F4C18D708FC16EC92F19174B90949AE3A0756
+HARVEST\MENU.INI                 329D4692A8F8C940BCDA9D4DA4E5EBFF84CE07451170D6A01A9F94B4256B5DD1  2F8B413F107CC3225F559AEDC5DDC9E89DD8998EF9C9DE0926CFCF07F33992F0
+HARVEST\HARVEST.EXE              6A9F3844254C6B18900685F10A83CA146BC1EEC1A396D68EB7DFF16CD217E72C  1D6AA81DB6E8B74C020CFD51BD08E192BE15624A6854A76E6C58E16C1EA21ED4
+HARVEST_CD\HARVESTER_DISC1.ISO   DC0F61FF1F62609F6D836D429E42BFBCDF8ABFCDC2D88F53A3B7A22E01397DF6  3768B0ED0C1D0F628E660A481A62364B4B7436965F0EB724F29D0AE9DDF1579D
+HARVEST_CD\HARVESTER_DISC2.ISO   7DD4830756FD56C4C07EAB0A18B92C115C0487E9D0E8F5784964CE6C5556C676  944FB24414D23360AD68726E320A5C6FB1B15AF63E8636E1642F6011E504DCDA
+HARVEST_CD\HARVESTER_DISC3.ISO   921F5C7EA6863A61834ED788C437B9F4323A68E062E1CE7E78F3BB03B3CEDFED  BDFF511F72B2F2546D8E54032AA10755D0E2E8DB83699E8DEBDBED3BFD79CAD8
+
+Para ver o código de um arquivo no PowerShell:  Get-FileHash "caminho\do\arquivo"
+
+
+Ao testar, anote
+----------------
+- texto ainda em inglês (onde apareceu);
+- texto saindo da caixa;
+- tópico de conversa que não responde direito;
+- qualquer travamento (e o que estava fazendo).

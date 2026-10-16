@@ -1,0 +1,32 @@
+﻿Offset,MaxCaracteres,Nota,Original,Traducao
+0x1010FF,12,acao do mouse,Use %s on %s,Use %s em %s
+0x101138,9,acao do mouse,Use %s on,Use %s em
+0x1011DE,10,acao do mouse,Examine %s,Examine %s
+0x1011F1,14,acao do mouse (confirmado: 'Examine the ANTENA D'),Examine the %s,Examine %s
+0x101208,10,acao do mouse,Talk to %s,Falar: %s
+0x10121B,14,acao do mouse,Pick up the %s,Pegue %s
+0x101255,14,acao do mouse,Operate the %s,Acione %s
+0x10139D,10,acao do mouse (2a copia),Examine %s,Examine %s
+0x1013B0,14,acao do mouse (2a copia),Examine the %s,Examine %s
+0x1013C7,10,acao do mouse (2a copia),Talk to %s,Falar: %s
+0x1013DA,14,acao do mouse (2a copia),Pick up the %s,Pegue %s
+0x1013F1,14,acao do mouse (2a copia),Operate the %s,Acione %s
+0x102776,9,acao do mouse (inventario),Use %s on,Use %s em
+0x1027A4,9,acao do mouse (inventario),Use %s on,Use %s em
+0x1027AE,12,acao do mouse (inventario),Use %s on %s,Use %s em %s
+0x1027C7,9,acao do mouse (inventario),Use %s on,Use %s em
+0x101F5C,9,titulo da caixa de respostas,Responses,Respostas
+0xFD115,14,inventario,your inventory,seu inventario
+0x102C9D,15,armas,Disarming %s...,Desarmou %s...
+0x102CB3,22,armas,"Arming %s, %i nails...","Arma: %s, %i pregos"
+0x102CCA,23,armas,"Arming %s, %i shells...","Arma: %s, %i cartuchos"
+0x102CE2,24,armas,"Arming %s, %i bullets...","Arma: %s, %i balas..."
+0x102CFB,24,armas,"Arming %s, %i bullets...","Arma: %s, %i balas..."
+0x102D14,20,armas,"Arming %s, %i gas...","Arma: %s, %i gas..."
+0x102D29,12,armas,Arming %s...,Arma: %s...
+0x10693C,109,tela de pausa (espacos centralizam),        HARVESTER IS PAUSED                                                         Press any key to continue,         HARVESTER PAUSADO                                                          Tecle algo para continuar
+0x106844,244,texto de transicao (troca de disco?),"After solving the enigmas of the Harvest town, you are thrust into the realm of the Order of the Harvest Moon, a bizarre institution of secretive knowledge.  However, the only thing you really care about is escaping from this hellish reality...","Depois de resolver os enigmas da cidade de Harvest, voce e lancado no reino da Ordem da Lua de Harvest, uma instituicao bizarra de conhecimento secreto.  Mas a unica coisa que realmente importa pra voce e escapar desta realidade infernal..."
+0x1006BD,17,senha parental,Invalid password.,Senha invalida.
+0xF521D,70,opcao de dialogo fixa no EXE (/ separa opcoes),Mr. Moynahan says you were out and/   about the night she disappeared.,O Sr. Moynahan diz que voce saiu/   na noite em que ela sumiu.
+0xF5270,59,opcao de dialogo fixa no EXE (/ separa opcoes),I found one of our wedding match-/   books in the cemetary.,Achei uma caixa de fosforos do/   casamento no cemiterio.
+0xF6587,36,opcao de dialogo fixa no EXE (/ separa opcoes),1. I'd like that./2. I'd rather not.,1. Eu gostaria./2. Prefiro nao.

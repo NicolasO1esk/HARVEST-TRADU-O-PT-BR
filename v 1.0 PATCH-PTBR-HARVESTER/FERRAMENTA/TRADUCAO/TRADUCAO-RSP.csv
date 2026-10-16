@@ -1,0 +1,807 @@
+﻿Linha,Partes,UsosNoEXE,Caracteres,Original,Traducao
+1,2,1,91,1. I see your point./2. The giver is not poorer... he receives a great feeling from giving.,1. Entendo o seu ponto./2. Quem da nao fica mais pobre... ganha uma sensacao otima ao dar.
+2,2,1,42,1. I don't have anything.../2. Go to Hell!,1. Eu nao tenho nada.../2. Va pro inferno!
+3,2,1,94,1. But none of them had buttons like this.../2. Cut the crap.  We both know you set that fire.,1. Mas nenhum deles tinha botoes assim.../2. Corta essa.  Nos dois sabemos que voce causou o incendio.
+4,2,1,86,1. I know why the Sheriff is blackmailing you./2. Why is the Sheriff blackmailing you?,1. Eu sei por que o Xerife esta te chantageando./2. Por que o Xerife esta te chantageando?
+5,2,1,123,1. I can show these around and prove both of you are guilty of something./2. I'm not threatening you...I just want to help.,1. Posso mostrar isso por ai e provar que voces dois sao culpados de alguma coisa./2. Nao estou te ameacando...so quero ajudar.
+6,2,1,62,1. I'd like a Lodge application./2. I was just looking around.,1. Quero uma ficha do Lodge./2. So estava dando uma olhada.
+7,2,1,99,"1. Well, can I go get one at the Lodge instead?/2. C'mon, it won't kill you to make a lousy copy...","1. Bem, posso pegar uma no Lodge entao?/2. Qual e, nao vai te matar fazer uma copiazinha..."
+8,2,1,54,1. That's ridiculous./2. I know exactly what you mean.,1. Isso e ridiculo./2. Sei exatamente o que voce quer dizer.
+9,2,1,31,1. The mail?/2. The TV station?,1. O correio?/2. A estacao de TV?
+10,3,0,31,Newspaper Fire/Lodge/TV Station,
+11,4,1,38,Newspaper Fire/Lodge/TV Station/Button,
+12,1,1,6,Button,
+13,2,2,56,1. Big deal.../2. Give me a chance to make it up to you!,1. Grande coisa.../2. Me de uma chance de compensar!
+14,1,1,3,BYE,
+15,1,1,14,Newspaper Fire,
+16,1,1,5,Lodge,
+17,1,1,9,The Lodge,
+18,1,1,11,Application,
+19,1,1,17,Lodge Application,
+20,1,1,10,TV Station,
+21,1,1,2,TV,
+22,1,1,8,Pottsdam,
+23,1,1,12,Mr. Pottsdam,
+24,1,1,7,Amnesia,
+25,1,1,6,Button,
+26,1,1,7,Epaulet,
+27,1,1,5,Shirt,
+28,1,0,13,Postal Button,
+29,1,1,31,What's that you say?  Oh yes...,
+30,1,1,5,Arson,
+31,2,1,108,"1. You burned down the newspaper building, didn't you?/2. Any evidence that the fire was set by an arsonist?","1. Voce incendiou o predio do jornal, nao foi?/2. Alguma prova de que o incendio foi criminoso?"
+32,1,1,9,Blackmail,
+33,1,1,3,BYE,
+34,2,0,90,1. What's behind all this killing?/2. Tell me... do you know about a girl named Stephanie?,1. O que esta por tras de todas essas mortes?/2. Me diga... conhece uma garota chamada Stephanie?
+35,2,1,16,1. Yes!/2. No...,1. Sim!/2. Nao...
+36,2,1,31,1. You got it./2. I'm not sure.,1. Pode deixar./2. Nao tenho certeza.
+37,7,1,96,The Button/Lower Torso/Emotional Instability/Commie Bastards/Aliens/Intestines/Nuclear Holocaust,
+38,2,1,63,"1. Yes, of course they did./2. No!  The llamas... they fear me.","1. Sim, claro que temeram./2. Nao!  As lhamas... elas me temem."
+39,2,1,92,"1. They're as pink as a Moscow sunset./2. No need for concern, Colonel. They're not Commies.","1. Sao tao vermelhos quanto um por do sol em Moscou./2. Nao se preocupe, Coronel. Eles nao sao comunistas."
+40,1,1,3,BYE,
+41,1,1,10,The Button,
+42,1,0,6,Button,
+43,1,1,25,I keep it on my person...,
+44,3,1,40,Commie Bastard/Nuclear Holocaust/Harvest,
+45,1,1,14,Commie Bastard,
+46,1,1,15,Commie Bastards,
+47,2,1,76,"1. No, not really./2. You can't shoot me... I'm an American!  I have rights!","1. Nao, na verdade nao./2. Voce nao pode atirar em mim... Eu sou americano!  Tenho direitos!"
+48,2,1,94,"1. Sure I would...for this great country of ours./2. Hell no, I refuse to surrender my rights!","1. Claro que sim...por este grande pais./2. Nem pensar, eu me recuso a abrir mao dos meus direitos!"
+49,2,1,136,"1. The Communists can hardly be said to hold a monopoly on intellectual discourse!/2. I don't think much about stuff like that, Colonel.","1. Os comunistas mal podem ter o monopolio do debate intelectual!/2. Nao penso muito nessas coisas, Coronel."
+50,2,1,15,Firemen/Harvest,
+51,1,1,11,Lower Torso,
+52,2,1,22,Commie Bastard/Harvest,
+53,1,1,10,Intestines,
+54,2,1,29,Firemen/Emotional Instability,
+55,1,1,21,Emotional Instability,
+56,3,1,40,The Button/Lower Torso/Nuclear Holocaust,
+57,1,1,7,Firemen,
+58,2,1,72,"1. That's a fine drawing, Colonel./2. Ahhh... art's for Commies, anyway.","1. Belo desenho, Coronel./2. Ahhh... arte e coisa de comunista, mesmo."
+59,3,1,34,Commie Bastard/Lower Torso/Harvest,
+60,1,1,7,Harvest,
+61,2,1,101,"1. Then I'll be sure to stay away from the Lodge./2. Sorry, Colonel...I've decided to join the Lodge.","1. Entao vou manter distancia do Lodge./2. Desculpe, Coronel...decidi entrar no Lodge."
+62,1,1,14,Commie Bastard,
+63,1,1,6,Aliens,
+64,3,1,40,Commie Bastard/Nuclear Holocaust/Harvest,
+65,1,1,17,Nuclear Holocaust,
+66,1,1,9,Holocaust,
+67,2,1,119,"1. No reason I can think of, Colonel. Blast away!/2. It would be nice, Colonel... but we've all got to follow orders...","1. Nao vejo motivo nenhum, Coronel. Mande bala!/2. Seria otimo, Coronel... mas todos temos que seguir ordens..."
+68,3,1,28,Kukaburros/Llamas/Cornflakes,
+69,1,1,10,Kukaburros,
+70,1,1,6,Llamas,
+71,1,1,10,Cornflakes,
+72,2,1,26,Commie Bastard/Lower Torso,
+73,1,1,4,Gimp,
+74,1,1,3,BYE,
+75,2,1,104,1. I expect it'll be an engaging experience./2. Can't wait to see what passes for art in this hell hole.,1. Imagino que vai ser uma experiencia envolvente./2. Mal posso esperar pra ver o que passa por arte nesse buraco.
+76,2,1,81,"1. Uh, you're not that hot... get over it, toots./2. You're incredibly beautiful.","1. Ahn, voce nem e tao gostosa... supera, docinho./2. Voce e incrivelmente linda."
+77,2,1,81,"1. Uh, you're not that hot... get over it, toots./2. Your lips are like cherries.","1. Ahn, voce nem e tao gostosa... supera, docinho./2. Seus labios parecem cerejas."
+78,2,0,76,"1. Uh, you're not that hot... get over it, toots./2. Your hair is like silk.","1. Ahn, voce nem e tao gostosa... supera, docinho./2. Seu cabelo parece seda."
+79,2,1,88,"1. Uh, you're not that hot... get over it, toots./2. Here's a mirror.  See for yourself!","1. Ahn, voce nem e tao gostosa... supera, docinho./2. Tome um espelho.  Veja voce mesma!"
+80,2,1,79,"1. Uh, you're not that hot... get over it, toots./2. You're a little vain, huh?","1. Ahn, voce nem e tao gostosa... supera, docinho./2. Voce e meio vaidosa, ne?"
+81,2,1,103,"1. You should know what kind of crook you work for./2. Help me out, Loomis, or I'll expose the Sheriff.","1. Voce devia saber pra que tipo de bandido trabalha./2. Me ajude, Loomis, ou eu desmascaro o Xerife."
+82,2,0,19,1. Sure!/2. No way.,1. Claro!/2. De jeito nenhum.
+83,2,1,68,"1. Just looking around.../2. No, I need to talk to the Sheriff only.","1. So dando uma olhada.../2. Nao, preciso falar so com o Xerife."
+84,2,1,62,"1. That coffee sure smells good.../2. No, just looking around.","1. Esse cafe esta cheiroso.../2. Nao, so dando uma olhada."
+85,4,0,47,Stephanie/Mrs. Loomis/Mrs. Phelps/A Man's Needs,
+86,4,1,47,Stephanie/Mrs. Loomis/Mrs. Phelps/A Man's Needs,
+87,1,1,3,BYE,
+88,1,1,9,Stephanie,
+89,2,1,28,Mrs. Loomis/French Postcards,
+90,1,1,11,Mrs. Loomis,
+91,2,1,26,Mrs. Phelps/Sheriff Dwayne,
+92,1,1,11,Mrs. Phelps,
+93,2,1,30,A Man's Needs/French Postcards,
+94,1,1,13,A Man's Needs,
+95,2,1,28,Mrs. Phelps/French Postcards,
+96,1,1,7,Sheriff,
+97,1,1,14,Sheriff Dwayne,
+98,1,1,6,Dwayne,
+99,2,1,20,Mattress/Mrs. Phelps,
+100,1,1,8,Mattress,
+101,2,1,25,A Man's Needs/Mrs. Loomis,
+102,1,1,16,French Postcards,
+103,1,0,3,BYE,
+104,1,0,3,FOR,
+105,1,1,20,Get-Out-of-Jail-Free,
+106,2,0,37,1. It felt great!/2. It made me sick.,1. Foi otimo!/2. Me deu nojo.
+107,1,0,25,"Stop by anytime, Steve...",
+108,1,0,25,"Stop by anytime, Steve...",
+109,1,0,5,KARIN,
+110,1,1,5,KARIN,
+111,2,1,83,"1. In your desk, you idiot...where do you think?/2. Does it matter?  I've got them!","1. Na sua mesa, seu idiota...onde mais seria?/2. Faz diferenca?  Estao comigo!"
+112,2,1,58,1. Sounds good...I'll take it./2. Forget it...I want more!,1. Parece bom...eu aceito./2. Esquece...quero mais!
+113,2,1,84,"1. In your desk, you idiot... where do you think?/2. Does it matter?  I've got them!","1. Na sua mesa, seu idiota... onde mais seria?/2. Faz diferenca?  Estao comigo!"
+114,2,1,75,1. I made copies and hid them!/2. It'd be easier to pay me to keep quiet...,1. Fiz copias e escondi!/2. Seria mais facil me pagar pra ficar quieto...
+115,2,1,84,"1. Hey, a deal's a deal./2. You know I made one set of copies... maybe I made two...","1. Ei, trato e trato./2. Voce sabe que fiz um jogo de copias... talvez eu tenha feito dois..."
+116,2,1,83,1. Great...it could get to be a habit./2. I hated doing it...but I needed my proof.,1. Otimo...pode virar habito./2. Odiei fazer isso...mas eu precisava da prova.
+117,2,1,77,"1. Yeah, I offed him all right./2. Nah, a nice fairy left it under my pillow.","1. E, eu apaguei ele mesmo./2. Nao, uma fadinha deixou embaixo do meu travesseiro."
+118,2,1,58,1. Something like that./2. The idea never crossed my mind.,1. Algo assim./2. A ideia nunca me passou pela cabeca.
+119,2,1,112,"1. This has got to be worth a lot to you, Sheriff./2. You're welcome to have this evidence, with my compliments.","1. Isso deve valer muito pra voce, Xerife./2. Pode ficar com essa prova, com meus cumprimentos."
+120,2,1,27,"1. Yes./2. No, I want more.","1. Sim./2. Nao, quero mais."
+121,4,1,27,Amnesia/Jail/Wedding/Loomis,
+122,2,0,77,"1. That insane woman cripples children!/2. I mind my own business, Sheriff...","1. Aquela louca aleija criancas!/2. Eu cuido da minha vida, Xerife..."
+123,2,1,80,"1. I have no idea./2. Maybe you should wonder what's inside that hotel, Sheriff.","1. Nao faco ideia./2. Talvez voce devesse se perguntar o que tem dentro daquele hotel, Xerife."
+124,2,1,55,"1. Yes, and I'm very concerned./2. No!  Karin vanished?","1. Sim, e estou muito preocupado./2. Nao!  A Karin sumiu?"
+125,2,0,81,"1. But what about civic responsibility?/2. Don't worry, I've got my own problems.","1. Mas e a responsabilidade civica?/2. Nao se preocupe, ja tenho meus problemas."
+126,2,0,89,1. Mr. Pottsdam already told me about the note./2. No problem... I'll keep my mouth shut.,1. O Sr. Pottsdam ja me contou do bilhete./2. Sem problema... vou ficar de bico calado.
+127,2,1,62,"1. You're shitting me... right?/2. Ah, well, that explains it.","1. Ta de sacanagem... ne?/2. Ah, bem, isso explica tudo."
+128,2,1,108,"1. No, nothing at all... I'd better be going./2. I found the mutilated body of a young girl in the cemetery.","1. Nao, nada... e melhor eu ir./2. Achei o corpo mutilado de uma menina no cemiterio."
+129,2,1,73,"1. I don't know... she was too ripped up to tell./2. Yes, I'm sure it is.","1. Nao sei... estava destrocada demais pra saber./2. Sim, tenho certeza que e."
+130,2,1,87,"1. Oh, Sheriff, I can't tell you how much./2. Not at all... but I had to defend myself.","1. Ah, Xerife, nem sei dizer o quanto./2. De jeito nenhum... mas eu tinha que me defender."
+131,1,1,3,BYE,
+132,1,1,5,Crime,
+133,3,1,30,Newspaper Fire/Transients/Jail,
+134,1,1,14,Newspaper Fire,
+135,1,1,9,Newspaper,
+136,1,0,4,Fire,
+137,3,1,28,Evidence Room/Amnesia/Loomis,
+138,2,0,14,Amnesia/Loomis,
+139,1,0,6,Curfew,
+140,3,1,16,Crime/Lodge/Jail,
+141,1,1,6,Loomis,
+142,1,1,6,Deputy,
+143,2,1,13,Crime/Wedding,
+144,1,1,10,Transients,
+145,3,1,19,Jail/Lodge/Moynahan,
+146,1,1,8,Moynahan,
+147,3,1,21,Crime/Wedding/Amnesia,
+148,1,1,7,Wedding,
+149,4,1,27,Crime/Wedding/Lodge/Amnesia,
+150,1,1,5,Lodge,
+151,2,1,92,1. I'm not interested in any stupid Lodge./2. How can I get an application?  I want to join.,1. Nao tenho interesse nesse Lodge idiota./2. Como consigo uma ficha?  Quero entrar.
+152,1,1,7,Wedding,
+153,1,1,7,Amnesia,
+154,2,1,13,Wedding/Lodge,
+155,1,1,4,Jail,
+156,2,1,13,Amnesia/Crime,
+157,1,1,13,Evidence Room,
+158,3,1,19,Wedding/Crime/Lodge,
+159,1,1,3,BYE,
+160,2,1,31,1. You know me?/2. Who are you?,1. Voce me conhece?/2. Quem e voce?
+161,3,1,27,Karin/Stephanie/Mr. Johnson,
+162,2,1,63,1. How will this sale help bums?/2. What time is the bake sale?,1. Como esse bazar vai ajudar mendigos?/2. A que horas e o bazar?
+163,2,0,53,"1. Yes, I'm sorry.../2. No, still no...official word.","1. Sim, sinto muito.../2. Nao, ainda nada...oficial."
+164,2,1,52,"1. Yes, here it is...her purse./2. Nope, afraid not.","1. Sim, aqui esta...a bolsa dela./2. Nao, infelizmente."
+165,2,1,42,"1. Yes, here it is.../2. Nope, afraid not.","1. Sim, aqui esta.../2. Nao, infelizmente."
+166,1,1,3,BYE,
+167,1,0,5,Karin,
+168,1,0,41,"Other than the diner, she's all I have...",
+169,3,0,24,Lodge/Sheriff/TV Station,
+170,1,1,5,Lodge,
+171,4,1,38,Lodge/Sheriff/TV Station/Disappearance,
+172,2,1,19,Lodge/Disappearance,
+173,1,1,11,Mr. Johnson,
+174,1,1,7,Johnson,
+175,2,1,13,Lodge/Sheriff,
+176,1,1,5,Lodge,
+177,1,1,7,Sheriff,
+178,3,1,39,Postmaster Boyle/Mr. Johnson/TV Station,
+179,1,0,9,Stephanie,
+180,3,0,19,Lodge/Sheriff/Karin,
+181,2,0,11,Lodge/Karin,
+182,2,1,13,LODGE/SHERIFF,
+183,1,1,5,Lodge,
+184,1,1,9,The Lodge,
+185,2,1,22,Postmaster Boyle/Karin,
+186,1,1,5,Karin,
+187,1,1,10,TV Station,
+188,2,1,24,Sheriff/Postmaster Boyle,
+189,1,1,5,Boyle,
+190,1,1,10,Postmaster,
+191,1,1,16,Postmaster Boyle,
+192,2,1,13,Lodge/Sheriff,
+193,1,1,13,Disappearance,
+194,2,1,89,"1. Everyone's trying to find her./2. Well, at least you got some flowers out of the deal.","1. Todo mundo esta tentando acha-la./2. Bem, pelo menos voce ganhou umas flores com isso."
+195,1,1,3,BYE,
+196,2,1,55,1. Are you crazy?  Forget it./2. Should be pretty easy.,1. Ficou maluco?  Esquece./2. Deve ser bem facil.
+197,2,1,14,1. Yes./2. No.,1. Sim./2. Nao.
+198,2,1,19,1. Okay./2. No way.,1. Ta bom./2. De jeito nenhum.
+199,2,1,19,1. Okay./2. No way.,1. Ta bom./2. De jeito nenhum.
+200,3,1,43,1. Who are you?/2. Who am I?/3. Where am I?,1. Quem e voce?/2. Quem sou eu?/3. Onde estou?
+201,2,1,9,Mom/Steve,
+202,2,1,15,Lousy Rat/Daddy,
+203,3,1,11,Sick/TV/Mom,
+204,2,1,54,"1. Still sick, huh?/2. Is, uh, Dad feeling any better?","1. Ainda doente, ne?/2. E, ahn, o pai esta melhor?"
+205,3,1,120,"1. Shut up, you little shit./2. Guess I'm going to a funeral instead./3. Don't hold your breath.  I'm not sure it's her.","1. Cala a boca, seu merdinha./2. Acho que vou a um enterro, entao./3. Nao fique esperando.  Nao tenho certeza que e ela."
+206,2,1,104,1. You're disgusting.  I'm not telling you anything./2. Yeah...ripped the spine right out of the body...,1. Voce e nojento.  Nao vou te contar nada./2. E...arrancaram a espinha do corpo...
+207,2,1,63,"1. How's it feel to be a little punk?/2. Not too bad, actually.","1. Como e ser um pirralho?/2. Nada mal, na verdade."
+208,2,1,36,1. You're evil./2. That's hilarious!,1. Voce e mau./2. Que hilario!
+209,2,0,59,"1. Don't start on me, Hank./2. You win some, you lose some.","1. Nao comeca, Hank./2. Umas a gente ganha, outras perde."
+210,1,1,3,BYE,
+211,1,0,3,Mom,
+212,1,0,15,instanticecream,
+213,1,1,14,instantoatmeal,
+214,2,1,15,Steve/Lousy Rat,
+215,1,1,5,STEVE,
+216,2,1,16,Cowboy Show/Sick,
+217,1,1,9,LOUSY RAT,
+218,1,1,3,RAT,
+219,2,1,19,Girl/'Lighting Out',
+220,1,1,12,LIGHTING OUT,
+221,1,1,14,'LIGHTING OUT',
+222,2,1,53,1. You're a little brat./2. Why are you so mad at me?,1. Voce e um pestinha./2. Por que esta tao bravo comigo?
+223,1,1,5,Paper,
+224,1,1,4,Girl,
+225,1,1,5,PAPER,
+226,1,1,5,DADDY,
+227,1,1,4,Girl,
+228,1,1,4,GIRL,
+229,2,1,12,TV/Stephanie,
+230,1,1,9,STEPHANIE,
+231,1,0,2,TV,
+232,1,1,39,Look at that tube...where's the remote?,
+233,1,1,11,Cowboy Show,
+234,1,1,11,COWBOY SHOW,
+235,2,1,78,"1. Little kids shouldn't watch violence./2. You're right, that is really neat.","1. Criancas nao deviam ver violencia./2. Voce tem razao, isso e muito legal."
+236,1,1,4,SICK,
+237,3,1,24,Daddy/School/Cowboy Show,
+238,1,1,6,SCHOOL,
+239,1,1,9,newspaper,
+240,1,1,4,fire,
+241,1,1,8,sentinel,
+242,1,1,5,lodge,
+243,1,0,3,bye,
+244,1,0,33,"Hey, Steve. I'm Jimmy James...yak",
+245,1,1,33,"Hey, Steve. I'm Jimmy James...yak",
+246,2,1,71,1. I've got better things to do./2. I'm supposed to?  I don't remember.,1. Tenho coisas melhores pra fazer./2. Eu deveria?  Nao me lembro.
+247,2,1,29,"1. Yes, I do./2. Nope, sorry.","1. Tenho, sim./2. Nao, foi mal."
+248,2,0,86,1. Okay... take the sneakers./2. Forget it... what do I care about what they're doing?,1. Ta bom... fique com os tenis./2. Esquece... que me importa o que eles fazem?
+249,2,0,30,"1. Yes, I did!/2. Nope, sorry.","1. Achei, sim!/2. Nao, foi mal."
+250,2,1,74,1. Isn't there anything you can do to help me?/2. Not for long you aren't!,1. Nao ha nada que voce possa fazer pra me ajudar?/2. Nao por muito tempo!
+251,2,1,53,"1. But you're a woman./2. What do you mean, 'extant'?","1. Mas voce e mulher./2. Como assim, 'existente'?"
+252,2,1,90,"1. Sure, I'd love to get it on with the ladies!/2. With a bunch of skanky whores?  No way!","1. Claro, adoraria me divertir com as mocas!/2. Com um bando de vadias nojentas?  Nem pensar!"
+253,2,0,65,1. You call that a reasonable price?!/2. Here it is... 200 bucks.,1. Voce chama isso de preco justo?!/2. Aqui esta... 200 pratas.
+254,1,1,42,These diseases can have pretty horrible...,
+255,2,0,77,1. I'm looking for a girl named Stephanie./2. Could you help me out a little?,1. Estou procurando uma garota chamada Stephanie./2. Pode me ajudar um pouco?
+256,2,0,27,1. Who am I?/2. Where am I?,1. Quem sou eu?/2. Onde estou?
+257,3,0,20,Graduation/Job/Steve,
+258,5,1,48,Harvest/Steve/Teenager/Cookies/Charity Bake Sale,
+259,5,0,48,Graduation/Sister/Hank/Cookies/Charity Bake Sale,
+260,4,1,24,Stephanie/Steve/Hank/Job,
+261,3,1,18,Stephanie/Hank/Job,
+262,2,1,18,Mr. Pottsdam/Lodge,
+263,2,1,118,"1. You're sick, Mom/2. If she'd been in the kitchen during the fire, she could've hung herself on a meat hook instead.","1. Voce e doente, mae/2. Se ela estivesse na cozinha no incendio, podia ter se enforcado num gancho de carne."
+264,2,0,67,1. What's communism got to do with anything?/2. Why are you scared?,1. O que o comunismo tem a ver com isso?/2. Por que voce esta com medo?
+265,2,1,75,"1. I'm sorry, I won't do it again./2. Who cares?  I'll go out if I want to.","1. Desculpe, nao faco mais./2. Quem liga?  Eu saio se quiser."
+266,2,0,93,"1. You're sick, Mom./2. Good thing there were only two of them.  Bad luck, three on a rafter.","1. Voce e doente, mae./2. Ainda bem que eram so duas.  Da azar, tres na mesma viga."
+267,2,0,68,"1. No!  Who could do such a thing?/2. This is one sick town, Mother.","1. Nao!  Quem faria uma coisa dessas?/2. Esta cidade e doente, mae."
+268,2,0,61,1. What about the wasps?/2. Do they have any idea who did it?,1. E as vespas?/2. Eles fazem ideia de quem foi?
+269,2,1,39,1. I didn't do it/2. Thank God for that,1. Nao fui eu/2. Gracas a Deus
+270,2,1,80,1. What day did she disappear?/2. Did she get lost... or did someone abduct her?,1. Em que dia ela sumiu?/2. Ela se perdeu... ou alguem a sequestrou?
+271,2,0,75,1. I believe her./2. I can't believe Pottsdam would do something like that.,1. Eu acredito nela./2. Nao acredito que o Pottsdam faria uma coisa dessas.
+272,2,0,44,1. What a shame./2. Do they know who did it?,1. Que pena./2. Eles sabem quem foi?
+273,2,1,57,1. How about that.../2. Do they have any idea who did it?,1. Olha so.../2. Eles fazem ideia de quem foi?
+274,2,1,43,1. Poor Jimmy./2. Little punk had it coming,1. Pobre Jimmy./2. O moleque mereceu
+275,2,1,56,1. Wouldn't miss it./2. I have some things I need to do.,1. Nao perderia por nada./2. Tenho umas coisas pra fazer.
+276,1,1,10,Good Cause,
+277,1,1,18,Annual Blood Drive,
+278,1,1,3,BYE,
+279,1,0,7,COOKIES,
+280,2,1,23,Steve/Charity Bake Sale,
+281,1,1,17,Charity Bake Sale,
+282,1,1,10,GRADUATION,
+283,2,0,13,Stephanie/Job,
+284,1,0,5,STEVE,
+285,4,1,37,Sister/Hank/Cookies/Charity Bake Sale,
+286,1,0,6,SISTER,
+287,1,0,49,Now you've done it!  Are you happy?  Poor baby...,
+288,1,1,55,"There, there, did your brother scare you?  Lemme see...",
+289,2,1,17,Sparky/Wasp Woman,
+290,1,1,10,WASP WOMAN,
+291,2,1,12,P.T.A./Lodge,
+292,1,1,6,SPARKY,
+293,3,1,22,Cookies/Hank/Stephanie,
+294,1,1,6,P.T.A.,
+295,1,1,3,PTA,
+296,1,1,11,HARVEST PTA,
+297,1,0,14,HARVEST P.T.A.,
+298,5,1,56,Charity Bake Sale/Annual Blood Drive/Lodge/Harvest/Steve,
+299,4,1,50,Charity Bake Sale/Annual Blood Drive/Lodge/Harvest,
+300,1,1,18,ANNUAL BLOOD DRIVE,
+301,2,1,10,Lodge/Hank,
+302,1,1,4,HANK,
+303,5,1,50,Father/Stephanie/Fiancee/Charity Bake Sale/Harvest,
+304,1,1,7,FIANCEE,
+305,3,1,38,Stephanie/Cooking and Cleaning/Wedding,
+306,1,1,20,COOKING AND CLEANING,
+307,1,1,7,COOKING,
+308,1,1,8,CLEANING,
+309,3,1,21,Father/Stephanie/Duty,
+310,1,1,9,STEPHANIE,
+311,2,1,15,Wedding/Fiancee,
+312,1,0,7,WEDDING,
+313,1,0,8,TEENAGER,
+314,2,1,13,Stephanie/Job,
+315,1,1,3,JOB,
+316,3,1,31,Stephanie/Father/Slaughterhouse,
+317,1,0,14,SLAUGHTERHOUSE,
+318,4,1,29,Lodge/Stephanie/Harvest/Steve,
+319,3,1,23,Lodge/Stephanie/Harvest,
+320,1,1,6,FATHER,
+321,1,1,7,Cookies,
+322,1,1,5,LODGE,
+323,2,0,85,"1. Why not?  I'll go look into it./2. Hey, the last thing I want is a fez on my head.","1. Por que nao?  Vou dar uma olhada./2. Ei, a ultima coisa que quero e um fez na cabeca."
+324,2,1,13,Steve/Harvest,
+325,1,1,7,Harvest,
+326,1,1,17,CHARITY BAKE SALE,
+327,1,1,9,BAKE SALE,
+328,1,1,21,THE CHARITY BAKE SALE,
+329,2,0,13,Lodge/Harvest,
+330,1,1,18,Annual Blood Drive,
+331,1,1,7,HARVEST,
+332,1,1,12,MR. POTTSDAM,
+333,1,1,8,POTTSDAM,
+334,2,1,80,"1. How can you SAY something so horrible?/2. Very funny, Mom.  I liked that one.","1. Como voce pode DIZER algo tao horrivel?/2. Muito engracado, mae.  Gostei dessa."
+335,2,1,71,1. Yes.  How did you know?/2. The last place I want to go is the Lodge.,1. Sim.  Como voce sabia?/2. O ultimo lugar aonde quero ir e o Lodge.
+336,2,1,101,1. I don't want anything to do with those maniacs./2. I believe I will.  I want to see what's inside.,1. Nao quero nada com esses manacos./2. Acho que vou.  Quero ver o que tem la dentro.
+337,2,1,18,Mr. Pottsdam/Lodge,
+338,1,1,10,MEAT PLANT,
+339,1,1,5,PLANT,
+340,2,1,76,"1. Like I said, I'm no butcher!/2. Maybe being a butcher wouldn't be so bad.","1. Como eu disse, nao sou acougueiro!/2. Talvez ser acougueiro nao seja tao ruim."
+341,3,1,22,Family/Community/Lodge,
+342,1,1,6,FAMILY,
+343,1,0,9,COMMUNITY,
+344,1,0,13,THE BAKE SALE,
+345,1,0,9,BAKE SALE,
+346,1,0,17,CHARITY BAKE SALE,
+347,1,1,5,Lodge,
+348,1,1,10,GOOD CAUSE,
+349,1,0,12,Mr. Moynahan,
+350,1,0,6,SCHOOL,
+351,2,0,56,1. Wouldn't miss it./2. I have some things I need to do.,1. Nao perderia por nada./2. Tenho umas coisas pra fazer.
+352,1,1,10,Good Cause,
+353,1,1,8,MOYNAHAN,
+354,1,1,12,MR. MOYNAHAN,
+355,1,1,23,NEWSPAPER BUILDING FIRE,
+356,1,0,14,NEWSPAPER FIRE,
+357,1,0,11,HARVEST PTA,
+358,2,0,28,Bake Sale/Annual Blood Drive,
+359,1,0,9,BAKE SALE,
+360,1,0,13,THE BAKE SALE,
+361,1,0,17,CHARITY BAKE SALE,
+362,1,0,18,Annual Blood Drive,
+363,1,0,18,ANNUAL BLOOD DRIVE,
+364,1,0,11,BLOOD DRIVE,
+365,2,1,86,1. Then I'd better try to get out.  I hate giving blood./2. I don't mind giving blood.,1. Entao e melhor eu tentar fugir.  Odeio doar sangue./2. Nao me importo de doar sangue.
+366,1,1,4,DUTY,
+367,1,1,4,FUCK,
+368,2,1,44,1. Yeah...how about it?/2. I didn't mean it.,1. E...que tal?/2. Nao foi isso que eu quis dizer.
+369,1,1,10,DOMINATRIX,
+370,1,0,3,BYE,
+371,1,1,45,Don't forget to put the papers out for Jimmy!,
+372,2,0,46,1. Isn't that cynical?/2. I see what you mean.,1. Isso nao e cinico?/2. Entendo o que voce quer dizer.
+373,1,0,32,You don't know the half of it...,
+374,1,1,32,You don't know the half of it...,
+375,3,1,21,Edna/Stephanie/Tucker,
+376,1,1,3,BYE,
+377,1,1,6,Tucker,
+378,1,1,3,Car,
+379,2,1,88,"1. If that's a real Tucker, I can understand your concern!/2. Could I take a look at it?","1. Se for um Tucker de verdade, entendo sua preocupacao!/2. Posso dar uma olhada?"
+380,2,1,14,Edna/Stephanie,
+381,1,1,9,Stephanie,
+382,1,1,6,Tucker,
+383,1,1,4,Edna,
+384,3,1,24,Edna's Diner/Child/Penis,
+385,1,1,12,Edna's Diner,
+386,1,1,6,Edna's,
+387,1,1,5,DNA's,
+388,2,1,14,Stephanie/Edna,
+389,1,1,5,Child,
+390,1,1,5,Karin,
+391,2,1,10,Penis/Edna,
+392,1,1,5,Penis,
+393,2,1,17,Edna/Edna's Diner,
+394,1,1,3,BYE,
+395,2,0,68,1. You and your partners must be rich!/2. What an odd coincidence...,1. Voce e seus socios devem ser ricos!/2. Que coincidencia estranha...
+396,2,1,91,"1. You killed them all, didn't you?/2. I'm sorry I trespassed...I was curious...forgive me?","1. Voce matou todos eles, nao foi?/2. Desculpe a invasao...fiquei curioso...me perdoa?"
+397,2,1,140,"1. No shit.  I just want to find out who I am and get the hell out of here./2. Is that a threat?  I've got the goods on you, not vice versa!","1. Nao brinca.  So quero descobrir quem eu sou e dar o fora daqui./2. Isso e uma ameaca?  Eu e que tenho podres seus, nao o contrario!"
+398,2,1,88,"1. Glue, huh?  All right... it's a trade./2. Not good enough.  I'm going to the Sheriff.","1. Cola, e?  Ta bom... temos um trato./2. Nao basta.  Vou ao Xerife."
+399,2,0,112,"1. Let's cut the shit.  You're a murderer, aren't you?/2. Yeah, with a thirst for knowledge... and other things.","1. Chega de papo.  Voce e um assassino, nao e?/2. E, com sede de conhecimento... e de outras coisas."
+400,2,1,87,"1. Glue, huh?  All right...it's a trade./2. Not good enough.  I'm going to the Sheriff.","1. Cola, e?  Ta bom...temos um trato./2. Nao basta.  Vou ao Xerife."
+401,2,0,115,1. I'm exposing a corrupt official and a possible criminal/2. I was just wondering if you knew anything about this?,1. Estou desmascarando um corrupto e um possivel criminoso/2. Queria saber se voce sabe algo sobre isso?
+402,4,1,51,Bake Sale/Order of the Harvest Moon/Losses/The Dead,
+403,3,1,42,Bake Sale/Order of the Harvest Moon/Losses,
+404,4,1,51,Bake Sale/Order of the Harvest Moon/Losses/The Dead,
+405,1,1,6,Corpse,
+406,2,1,7,/Corpse,
+407,2,1,55,"1. Yes, I took them... here they are./2. Not a thing...","1. Sim, eu peguei... aqui estao./2. Nada..."
+408,2,0,84,1. What disappearance?/2. I'm more disturbed by the disappear- ance than the gossip!,1. Que desaparecimento?/2. O desaparecimento me preocupa mais que a fofoca!
+409,2,1,97,"1. How about I beat my truth out of YOU, Moynahan?/2. Are you saying the Order caused my amnesia?","1. Que tal eu arrancar a verdade de VOCE, Moynahan?/2. Esta dizendo que a Ordem causou minha amnesia?"
+410,1,1,3,BYE,
+411,1,1,9,Bake Sale,
+412,1,1,17,Charity Bake Sale,
+413,2,1,32,Order of the Harvest Moon/Losses,
+414,1,1,25,Order of the Harvest Moon,
+415,1,1,5,Order,
+416,1,1,4,Moon,
+417,1,1,7,Harvest,
+418,2,1,16,Bake Sale/Losses,
+419,1,1,6,Losses,
+420,1,0,4,Loss,
+421,4,0,39,Bake Sale/Corpse/The Dead/Wayward Hotel,
+422,3,1,30,Bake Sale/Corpse/Wayward Hotel,
+423,2,1,23,Bake Sale/Wayward Hotel,
+424,2,1,7,/Corpse,
+425,2,1,9,/The Dead,
+426,1,1,13,Wayward Hotel,
+427,1,1,7,Wayward,
+428,1,1,5,Hotel,
+429,2,1,95,1. That's very charitable of you. /2. Were the guys who...dropped dead...staying at your hotel?,1. Muito caridoso da sua parte. /2. Os caras que...cairam mortos...estavam no seu hotel?
+430,1,0,25,Order of the Harvest Moon,
+431,1,0,10,Dangerous?,
+432,2,1,13,Corpse/Losses,
+433,1,1,6,Losses,
+434,2,1,7,/Corpse,
+435,1,1,6,Corpse,
+436,1,1,8,John Doe,
+437,1,1,8,The Dead,
+438,1,1,4,Dead,
+439,4,0,56,Losses/Order of the Harvest Moon/Wayward Hotel/Bake Sale,
+440,1,1,8,John Doe,
+441,1,1,5,Slash,
+442,1,1,7,Slashes,
+443,1,1,3,Cut,
+444,1,1,4,Cuts,
+445,1,1,4,Stab,
+446,1,1,7,Stabbed,
+447,1,1,7,Sutures,
+448,1,1,6,Murder,
+449,1,1,8,Murderer,
+450,1,1,9,Blackmail,
+451,1,1,7,Sheriff,
+452,2,1,54,1. All right./2. Forget it.  I'm going to the Sheriff.,1. Ta bom./2. Esquece.  Vou ao Xerife.
+453,1,1,3,BYE,
+454,3,1,28,Pole/Alarm System/Pastorelli,
+455,1,1,3,BYE,
+456,1,1,4,Pole,
+457,2,1,19,Alarm System/Aliens,
+458,1,1,12,Alarm System,
+459,2,1,17,Aliens/Pastorelli,
+460,1,0,6,Aliens,
+461,1,1,33,Think you can get one of those...,
+462,1,1,10,Pastorelli,
+463,1,1,6,barber,
+464,1,1,14,Mr. Pastorelli,
+465,1,1,12,Alarm System,
+466,1,1,3,BYE,
+467,2,0,92,"1. My God...you'd do that to your own daughter?/2. Was that her on the bed, or is she alive?","1. Meu Deus...voce faria isso com a propria filha?/2. Era ela na cama, ou ela esta viva?"
+468,1,1,40,What are you doing here at this hour...?,
+469,2,1,66,"1. Sure... you can have it!/2. No, just thought you'd like a peek.","1. Claro... pode ficar!/2. Nao, so achei que ia querer dar uma espiada."
+470,3,0,127,1. For the hell of it./2. We couldn't agree to a price for my silence./3. Thought you'd like to know who's educating your kids.,1. Porque sim./2. Nao chegamos a um preco pelo meu silencio./3. Achei que ia querer saber quem educa seus filhos.
+471,1,1,95,"Sorry, you'll have to ask Mrs. Pottsdam for permission to see Stephanie.  She's in the kitchen.",
+472,2,1,56,1. I've lost my memory./2. I came over to see Stephanie.,1. Eu perdi a memoria./2. Vim ver a Stephanie.
+473,4,1,38,Amnesia/Marriage/Father/Slaughterhouse,
+474,2,1,21,Father/Slaughterhouse,
+475,2,1,11,Father/Meat,
+476,1,1,6,Father,
+477,2,0,41,"1. Yes, I did./2. No, I haven't seen him.","1. Vi, sim./2. Nao, nao vi."
+478,1,0,17,What do you want?,
+479,2,1,66,"1. Edna's daughter, Karin, is missing./2. I want to see Stephanie.","1. A filha da Edna, Karin, sumiu./2. Quero ver a Stephanie."
+480,2,1,69,"1. Edna's daughter, Karin, is missing./2. My father's still not well.","1. A filha da Edna, Karin, sumiu./2. Meu pai ainda nao esta bem."
+481,2,1,73,1. Where were you Tuesday night?/2. What exactly did the ransom note say?,1. Onde voce estava terca a noite?/2. O que exatamente dizia o bilhete de resgate?
+482,2,1,81,"1. When a child is missing, it's every- one's business./2. Just idle curiosity...","1. Quando uma crianca some, e problema de todos./2. Pura curiosidade..."
+483,2,1,79,"1. She was 8 years old, for Christ's sake./2. They start out young, don't they?","1. Ela tinha 8 anos, pelo amor de Deus./2. Comecam cedo, ne?"
+484,2,1,56,1. Do you get to wear a fez?/2. How did you manage that?,1. Voce vai usar um fez?/2. Como conseguiu isso?
+485,2,0,100,1. You molested Karin and buried her alive./2. Karin accused you of abusing her. I don't believe it.,1. Voce abusou da Karin e a enterrou viva./2. A Karin te acusou de abuso. Nao acredito nisso.
+486,2,1,100,"1. Moynahan saw you near the cemetery that night./2. Why are you covering up for him, Mrs. Pottsdam?","1. O Moynahan viu voce perto do cemiterio naquela noite./2. Por que esta acobertando ele, Sra. Pottsdam?"
+487,2,1,91,"1. All right... I'm sorry, Mr. Pottsdam./2. Why are you covering up for him, Mrs. Pottsdam?","1. Ta bom... desculpe, Sr. Pottsdam./2. Por que esta acobertando ele, Sra. Pottsdam?"
+488,2,0,46,"1. Yes... terrible, isn't it?/2. No, I didn't.","1. Sim... terrivel, nao e?/2. Nao, nao fiquei."
+489,2,1,42,1. Sure did./2. No...couldn't be bothered.,"1. Fui, sim./2. Nao...nem quis saber."
+490,1,1,3,BYE,
+491,1,1,7,Amnesia,
+492,4,1,34,Stephanie/Meat/Marriage/Commitment,
+493,1,1,8,Marriage,
+494,3,1,23,Lodge/Mr. Moynahan/Meat,
+495,1,1,10,Commitment,
+496,3,1,20,Meat/Newspaper/Lodge,
+497,1,1,6,Father,
+498,2,1,19,Slaughterhouse/Meat,
+499,1,1,14,Slaughterhouse,
+500,1,1,14,Slaughterhouse,
+501,2,1,105,1. I don't want to work in a filthy slaughterhouse./2. I think working in a slaughterhouse might be cool.,1. Nao quero trabalhar num matadouro imundo./2. Acho que trabalhar num matadouro pode ser legal.
+502,2,1,11,Meat/Father,
+503,1,1,6,Father,
+504,1,1,4,Meat,
+505,4,1,27,Stephanie/Meat/Lodge/Father,
+506,1,1,9,Stephanie,
+507,2,1,64,1. Why is Stephanie grounded?/2. I really need to see Stephanie.,1. Por que a Stephanie esta de castigo?/2. Preciso muito ver a Stephanie.
+508,3,0,20,Marriage/Father/Meat,
+509,2,1,9,/Peephole,
+510,1,1,5,Lodge,
+511,3,1,23,Stephanie/Marriage/Meat,
+512,1,1,9,Newspaper,
+513,1,1,5,Lodge,
+514,1,1,8,Moynahan,
+515,1,1,12,Mr. Moynahan,
+516,2,1,11,Father/Meat,
+517,1,1,8,Peephole,
+518,1,1,7,Pervert,
+519,1,1,6,Peeper,
+520,1,1,11,Peeping Tom,
+521,1,1,3,Spy,
+522,1,1,7,Spyhole,
+523,1,1,4,Hole,
+524,3,1,150,"1. You've been spying on your daughter, haven't you?/2. Obviously, Mrs. Pottsdam is a lesbian./3. Looks like the house's previous owner was a pervert.","1. Voce anda espionando sua filha, nao e?/2. Obviamente, a Sra. Pottsdam e lesbica./3. Parece que o antigo dono da casa era um pervertido."
+525,1,1,6,Murder,
+526,1,1,8,Murderer,
+527,1,1,6,Killer,
+528,1,1,32,1. Just a gut feeling right now.,"1. Por enquanto, e so um palpite."
+529,2,0,8,%s/2. %s,
+530,2,1,9,%s/%d. %s,
+531,2,1,9,%s/%d. %s,
+532,2,1,93,1. That proves you were out after curfew./2. You told me you were home that night.  You lied.,1. Isso prova que voce saiu depois do toque de recolher./2. Voce disse que estava em casa naquela noite.  Mentiu.
+533,1,1,6,Toilet,
+534,2,1,67,1. I'm sorry to hear that./2. That was the night Karin disappeared.,1. Sinto muito./2. Foi a noite em que a Karin sumiu.
+535,1,1,6,Molest,
+536,1,1,8,Molester,
+537,1,1,9,Pedophile,
+538,2,1,77,"1. You've been watching Stephanie undress./2. You molested Karin, didn't you?","1. Voce anda vendo a Stephanie se despir./2. Voce abusou da Karin, nao foi?"
+539,2,1,75,"1. Fix the hole, or I tell Stephanie./2. I want to see you squirm, fat man.","1. Conserte o buraco, ou eu conto pra Stephanie./2. Quero ver voce se contorcer, gordao."
+540,2,1,35,1. Again!/2. That's enough for now.,1. De novo!/2. Chega por enquanto.
+541,1,1,3,BYE,
+542,3,1,32,Aluminum Siding/Sheep/Pastorelli,
+543,1,1,3,BYE,
+544,1,1,15,Aluminum Siding,
+545,1,1,8,Aluminum,
+546,2,1,19,Pastorelli/Plumbing,
+547,1,1,5,Sheep,
+548,2,1,19,Pastorelli/Plumbing,
+549,1,1,10,Pastorelli,
+550,1,1,14,Mr. Pastorelli,
+551,1,1,6,barber,
+552,1,1,8,Plumbing,
+553,1,1,8,Plumbing,
+554,1,1,3,BYE,
+555,2,0,30,"1. Yes, please./2. No, thanks.","1. Sim, por favor./2. Nao, obrigado."
+556,2,1,14,1. Yes./2. No.,1. Sim./2. Nao.
+557,2,1,61,"1. Oh, it was real sweet.../2. God, no!  It was self defense!","1. Ah, foi uma delicia.../2. Deus, nao!  Foi legitima defesa!"
+558,2,1,95,"1. I took her bones, what'd'ya think of that?/2. What a terrible thing to do...why I oughtta...","1. Peguei os ossos dela, que acha disso?/2. Que coisa terrivel...ora, eu deveria..."
+559,2,1,103,"1. You don't happen to have Stephanie's spine lying around, do you?/2. When is the funeral going to be?","1. Por acaso voce nao tem a espinha da Stephanie por ai, tem?/2. Quando vai ser o enterro?"
+560,2,1,80,"1. Mrs. Pottsdam...I'm so sorry.../2. Another skeleton in the family closet, eh?","1. Sra. Pottsdam...sinto muito.../2. Mais um esqueleto no armario da familia, hein?"
+561,2,1,83,1. Tell me what's going on!/2. Where's Mr. Pottsdam?  Does he know what's happened?,1. Me diga o que esta acontecendo!/2. Cade o Sr. Pottsdam?  Ele sabe o que houve?
+562,2,1,104,1. You look just like my mom... except for the hair./2. I'd like to see... what's her name... Stephanie?,1. Voce e igualzinha a minha mae... menos o cabelo./2. Queria ver... como e o nome dela... Stephanie?
+563,2,1,16,Pearls/Bake Sale,
+564,2,1,16,Wedding/Grounded,
+565,2,1,24,"1. Yes, please./2. No...","1. Sim, por favor./2. Nao..."
+566,2,1,83,"1. Where were you Tuesday night, when she disappeared?/2. Who told you about Karin?","1. Onde voce estava terca a noite, quando ela sumiu?/2. Quem te contou da Karin?"
+567,2,1,102,1. Isn't that a little harsh?/2. I burned down the diner to get in the Lodge.  I didn't mean any harm.,1. Isso nao e meio duro?/2. Queimei a lanchonete pra entrar no Lodge.  Nao foi por mal.
+568,1,1,3,BYE,
+569,1,1,6,Pearls,
+570,2,1,21,Mr. Pottsdam/Grounded,
+571,1,1,9,Bake Sale,
+572,2,1,18,Mr. Moynahan/Lodge,
+573,1,1,7,Wedding,
+574,2,1,25,Mr. Moynahan/Mr. Pottsdam,
+575,1,1,8,Grounded,
+576,2,1,68,"1. Can I see Stephanie?/2. Will you let her out of her room, please?","1. Posso ver a Stephanie?/2. Pode deixar ela sair do quarto, por favor?"
+577,2,1,22,Mr. Pottsdam/Bake Sale,
+578,1,1,12,Mr. Pottsdam,
+579,1,1,8,Pottsdam,
+580,3,1,26,Mr. Moynahan/Lodge/Wedding,
+581,1,1,8,Moynahan,
+582,1,1,12,Mr. Moynahan,
+583,2,1,18,Lodge/Mr. Pottsdam,
+584,1,1,5,Lodge,
+585,1,1,9,The Lodge,
+586,2,1,20,Mr. Pottsdam/Wedding,
+587,1,1,3,BYE,
+588,2,1,38,1. Oops!  Excuse me!/2. You're busted!,1. Opa!  Com licenca!/2. Peguei voces!
+589,2,1,96,1. I think this photo's worth more than that./2. All right...maybe I could use a good solid bat.,1. Acho que esta foto vale mais que isso./2. Ta bom...um bom taco solido pode ser util.
+590,2,1,19,1. Okay!/2. No way.,1. Ta bom!/2. De jeito nenhum.
+591,2,1,46,"1. Yes, I do./2. No, Ma'am.  I've seen enough.","1. Sim, quero./2. Nao, senhora.  Ja vi o bastante."
+592,3,1,33,Harvest/Lodge/Corporal Punishment,
+593,3,1,33,Harvest/Lodge/Corporal Punishment,
+594,2,1,104,"1. Stephanie didn't deserve what happened to her!/2. That's right, kids.  Respect your elders...or else!","1. A Stephanie nao merecia o que aconteceu com ela!/2. Isso mesmo, criancas.  Respeitem os mais velhos...ou entao!"
+595,2,0,50,"1. Yes, of course./2. I've got other things to do.","1. Sim, claro./2. Tenho outras coisas pra fazer."
+596,1,1,14,I really do...,
+597,1,1,3,BYE,
+598,1,1,7,Harvest,
+599,3,1,33,Harvest/Lodge/Corporal Punishment,
+600,1,1,5,Lodge,
+601,3,1,33,Harvest/Lodge/Corporal Punishment,
+602,1,0,19,Corporal Punishment,
+603,1,1,34,That bridges the generation gap...,
+604,2,1,13,Harvest/Lodge,
+605,1,1,3,BYE,
+606,2,1,16,1. Yes!/2. No...,1. Sim!/2. Nao...
+607,2,1,65,"1. Yeah.  You gonna rat on me?/2. No, I was just passing through.","1. E.  Vai me dedurar?/2. Nao, so estava de passagem."
+608,2,0,77,1. That psychotic bitch has him sliced to ribbons./2. He's recovering nicely.,1. Aquela vaca psicotica fez picadinho dele./2. Ele esta se recuperando bem.
+609,4,1,42,Family Business/Cats/Dad's Illness/Amnesia,
+610,1,1,4,Meat,
+611,1,1,3,BYE,
+612,1,1,4,Cats,
+613,2,1,57,"1. You seem defensive.  I wonder why./2. Here, of course.","1. Voce parece na defensiva.  Fico pensando por que./2. Aqui, claro."
+614,2,1,20,Meat/Family Business,
+615,1,1,15,Family Business,
+616,1,1,4,Meat,
+617,2,1,97,"1. I'm sure it's good... could I have some meat to take home?/2. Oh, God...not the Lodge again...","1. Deve ser bom... posso levar um pouco de carne pra casa?/2. Ai, Deus...o Lodge de novo nao..."
+618,4,1,41,Cutting Costs/Lodge/Dad's Illness/Amnesia,
+619,3,1,35,Family Business/Cutting Costs/Lodge,
+620,1,1,15,Family Business,
+621,3,1,26,Dad's Illness/Amnesia/Meat,
+622,2,1,21,Dad's Illness/Amnesia,
+623,1,1,13,Dad's Illness,
+624,2,1,21,Family Business/Lodge,
+625,1,1,13,Cutting Costs,
+626,3,1,34,Dad's Illness/Meat/Family Business,
+627,2,1,29,Dad's Illness/Family Business,
+628,1,1,5,Lodge,
+629,1,1,9,The Lodge,
+630,2,1,20,Meat/Family Business,
+631,1,1,15,Family Business,
+632,1,1,7,Amnesia,
+633,2,1,29,Dad's Illness/Family Business,
+634,1,1,3,BYE,
+635,2,1,14,1. Yes./2. No.,1. Sim./2. Nao.
+636,2,1,30,1. In Heaven./2. In all of us.,1. No Ceu./2. Em todos nos.
+637,2,1,50,1. Bounce on a spring./2. Frolic with the Wombats.,1. Pular numa mola./2. Brincar com os Vombates.
+638,2,1,73,1. I'll take the Staff./2. The special imported wombat herding equipment.,1. Fico com o Cajado./2. O equipamento importado especial de pastorear vombates.
+639,6,1,141,1. Strawberry Preserves./2. Size 12 sneaker./3. Footlong Hogie./4. Trip to Brazil./5. A new car./6. None of the above; it's a trick question!,1. Geleia de Morango./2. Tenis numero 44./3. Sanduiche de 30 cm./4. Viagem ao Brasil./5. Um carro novo./6. Nenhuma das anteriores; e uma pegadinha!
+640,2,0,80,1. I think Moynahan's up to no good./2. I thought you might find it interesting.,1. Acho que o Moynahan esta aprontando./2. Achei que voce ia achar interessante.
+641,2,1,67,1. Boyle burned down your newspaper building./2. I can't imagine...,1. O Boyle incendiou o predio do seu jornal./2. Nem imagino...
+642,7,1,67,Sentinel/Amnesia/Lodge/Gein Memorial/Quality Time/Principal/Big Guy,
+643,2,1,99,"1. Hey, I'm not the one screwing old ladies in closets./2. Look, I'm sorry.  I was just having fun.","1. Ei, nao sou eu que transo com velhas em armarios./2. Olha, desculpe.  So estava me divertindo."
+644,1,1,3,BYE,
+645,1,1,7,Big Guy,
+646,3,1,28,Lodge/Quality Time/Principal,
+647,1,1,8,Sentinel,
+648,2,1,23,Gein Memorial/Principal,
+649,1,1,7,Amnesia,
+650,1,1,12,Quality Time,
+651,1,1,12,Quality Time,
+652,2,1,13,Amnesia/Lodge,
+653,1,1,13,Gein Memorial,
+654,2,1,13,Lodge/Big Guy,
+655,1,1,5,Lodge,
+656,1,1,9,The Lodge,
+657,2,1,17,Principal/Big Guy,
+658,1,1,9,Principal,
+659,1,1,7,Big Guy,
+660,1,0,3,BYE,
+661,1,0,35,Someone burned down the TV station!,
+662,1,0,30,On the night of our bake sale?,
+663,1,1,33,On the night of our bake sale...?,
+664,3,0,108,1. You all look alike./2. To hell with your cookies.../3. Who exactly is this bake sale supposed to benefit?,"1. Voces sao todas iguais./2. Pro inferno com seus biscoitos.../3. Esse bazar e pra ajudar quem, exatamente?"
+665,1,0,32,Mercy...what a terrible thing...,
+666,1,0,12,Yes.  Never.,
+667,1,0,28,They deserve to be buried...,
+668,1,0,28,Don't be such a wiseapple...,
+669,1,0,5,RYDER,
+670,1,0,14,What happened?,
+671,1,0,16,so don't go away,
+672,1,0,23,Steve's a swell name...,
+673,1,1,23,my dog's name is Steve.,
+674,2,0,64,"1. Yeah, I guess./2. No, I'd like to know who owns this station.","1. E, acho que sim./2. Nao, quero saber quem e o dono desta estacao."
+675,1,1,16,Don't go away...,
+676,2,0,100,"1. Have you got any information on Karin's disappearance?/2. Can I have your autograph, Range Ryder?","1. Tem alguma informacao sobre o sumico da Karin?/2. Me da um autografo, Range Ryder?"
+677,1,1,33,"...well, it just breaks my heart.",
+678,1,1,11,TV Violence,
+679,1,1,3,BYE,
+680,1,1,8,Violence,
+681,1,1,11,TV Violence,
+682,2,1,125,1. Children watch your show.  Don't you think this violence is bad for them?/2. I love all the blood and gore on your show...,1. Criancas assistem seu programa.  Nao acha essa violencia ruim pra elas?/2. Adoro todo o sangue e a violencia do seu programa...
+683,1,0,3,BYE,
+684,1,0,16,I've told you...,
+685,1,1,13,What is this?,
+686,2,1,111,1. Fine... I'll use it if I have to./2. To hell with your initiation!  I just want to find out about Stephanie.,1. Ta bom... uso se precisar./2. Pro inferno com sua iniciacao!  So quero saber da Stephanie.
+687,2,1,115,1. You sick bastard!  What have you done with Stephanie?/2. You expect me to steal the remains and bring them here?,1. Seu desgracado doente!  O que fez com a Stephanie?/2. Espera que eu roube os restos e traga pra ca?
+688,2,1,86,1. I... I had no idea she'd kill herself./2. You bastards!  You've made me a murderer!,1. Eu... eu nao fazia ideia que ela ia se matar./2. Seus desgracados!  Voces me tornaram um assassino!
+689,2,1,121,1. To hell with this!  I'm no longer interested in becoming one of you./2. Candidate?  I thought this WAS the Initiation!,1. Pro inferno com isso!  Nao quero mais ser um de voces./2. Candidato?  Achei que isto ERA a Iniciacao!
+690,2,1,103,1. Is that all you can say?  A man was electrocuted!/2. Pastorelli took a big spill... a permanent one.,1. So isso que tem a dizer?  Um homem morreu eletrocutado!/2. O Pastorelli levou um tombo... permanente.
+691,2,1,90,"1. Jeez, that's no minor prank...that's arson!  Forget it!/2. All right...any suggestions?","1. Puxa, isso nao e brincadeira...e incendio criminoso!  Esquece!/2. Ta bom...alguma sugestao?"
+692,2,1,100,"1. Fine, I'll do it.  Thinking of opening a salon, Sarge?/2. I've had enough of this.  I'm no thief.","1. Ta bom, eu faco.  Pensando em abrir um salao, Sargento?/2. Pra mim chega.  Nao sou ladrao."
+693,2,0,89,1. Doesn't sound so bad... I'll do it./2. I see.  Then the Lodge is comprised of thieves?,1. Nao parece tao ruim... eu faco./2. Entendo.  Entao o Lodge e feito de ladroes?
+694,1,1,31,report back here for next ass..,
+695,2,1,111,"1. Yes, I want to know what you know./2. No, I've changed my mind.  I get a bad feeling from this damned place.","1. Sim, quero saber o que voce sabe./2. Nao, mudei de ideia.  Esse lugar maldito me da arrepios."
+696,2,1,62,"1. Yes, I'd like to join the Lodge./2. What kind of knowledge?","1. Sim, quero entrar no Lodge./2. Que tipo de conhecimento?"
+697,2,1,89,"1. Paperwork?  Why should I fill out a stupid form?/2. Okay, give me an application then.","1. Papelada?  Por que preencher um formulario idiota?/2. Ta bom, me de uma ficha entao."
+698,2,0,106,"1. You're talking about my amnesia, aren't you?/2. Y'know...I think I can live without knowing that stuff.","1. Esta falando da minha amnesia, nao e?/2. Sabe...acho que vivo bem sem saber disso."
+699,1,1,8,Not yet.,
+700,2,0,113,"1. Fine, I'll get an application as soon as I can./2. I don't give a damn, I've had it with this screwed-up town!","1. Ta bom, pego uma ficha assim que puder./2. Estou pouco me lixando, cansei desta cidade maluca!"
+701,1,0,31,i've told you what u must do...,
+702,1,1,20,"There you go, Spots.",
+703,2,0,103,1. Where'd you hear about my memory loss?/2. Then why are you sketching nude men in my fire department?,1. Onde ouviu falar da minha perda de memoria?/2. Entao por que esta desenhando homens nus no meu quartel?
+704,2,0,29,Newspaper Building Fire/Spots,
+705,1,1,36,"Don't be such a party pooper, Steve.",
+706,4,0,35,Art/Newspaper Fire/Wasp Woman/Spots,
+707,2,1,27,1. I set the fire./2. Nope.,1. Eu causei o incendio./2. Nao.
+708,1,1,3,BYE,
+709,1,1,5,Spots,
+710,1,0,4,Spot,
+711,1,1,43,None of us can resist a nice cut of meat...,
+712,1,1,3,Art,
+713,1,1,10,Wasp Woman,
+714,1,1,14,Newspaper Fire,
+715,1,1,14,Newspaper Fire,
+716,1,1,4,Fire,
+717,2,0,84,1. You think it was arson?/2. Maybe you were too busy drawing to put it out in time.,1. Acha que foi incendio criminoso?/2. Talvez estivesse ocupado demais desenhando pra apagar a tempo.
+718,1,1,24,Now don't you go moving!,
+719,1,1,3,BYE,
+720,4,1,37,Those People/Wedding/Grounded/Amnesia,
+721,1,1,5,Lodge,
+722,2,0,62,1. It's not that bad./2. Maybe... but I've got to join anyway.,1. Nao e tao ruim./2. Talvez... mas tenho que entrar mesmo assim.
+723,1,1,12,Come here...,
+724,2,0,56,"1. Yes./2. You've been shut up here too long, Stephanie.","1. Sim./2. Voce esta trancada aqui ha tempo demais, Stephanie."
+725,1,1,29,I want you.  Make love to me.,
+726,2,0,48,"1. I want you, too./2. No, it wouldn't be right.","1. Eu tambem te quero./2. Nao, nao seria certo."
+727,1,1,18,Then take me...now,
+728,2,0,69,1. If you're sure you want me to.../2. I don't feel right about that.,1. Se tem certeza que quer.../2. Nao me sinto bem com isso.
+729,2,1,76,1. I won't leave without you./2. Probably good advice.  I'll give it a shot.,1. Nao vou embora sem voce./2. Provavelmente um bom conselho.  Vou tentar.
+730,2,1,23,1. I did./2. No idea...,1. Fui eu./2. Nao faco ideia...
+731,2,1,61,1. It's a harmless enough prank./2. By any means necessary...,1. E uma brincadeira inofensiva./2. Por todos os meios necessarios...
+732,2,0,97,1. Why would anyone steal a bolt of fabric?/2. I took that cloth... part of the Lodge initiation.,1. Por que alguem roubaria um rolo de tecido?/2. Eu peguei o tecido... parte da iniciacao do Lodge.
+733,2,1,105,"1. I just took some cloth.  I can't help it if they're paranoid./2. Yes.  God help me, I was responsible.","1. So peguei um tecido.  Nao tenho culpa se eles sao paranoicos./2. Sim.  Que Deus me ajude, fui o responsavel."
+734,2,0,90,1. Not a thing./2. I didn't mean to kill him... I just wanted the pole for the initiation.,1. Nada./2. Eu nao queria mata-lo... so queria o poste pra iniciacao.
+735,2,1,75,1. No kidding?/2. That was me.  I needed the pole for the Lodge initiation.,1. Nao brinca?/2. Fui eu.  Precisava do poste pra iniciacao do Lodge.
+736,2,1,83,1. I had to... to get into the Lodge./2. Of course not!  How could you ask me that?,1. Eu tive que... pra entrar no Lodge./2. Claro que nao!  Como pode me perguntar isso?
+737,2,1,106,"1. So what?  I didn't stick her head in the noose!/2. I had no idea that would happen... God, I'm sorry...","1. E dai?  Nao fui eu que enfiei a cabeca dela na forca!/2. Eu nao fazia ideia que isso ia acontecer... Deus, me desculpe..."
+738,2,0,94,1. I'm getting out of here...with you or without you!/2. You're right.  This has gone too far.,1. Vou dar o fora daqui...com ou sem voce!/2. Voce tem razao.  Isso foi longe demais.
+739,2,1,88,"1. Yeah, I want nothing to do with the Lodge now./2. No... I've gone to far to stop now.","1. E, agora nao quero nada com o Lodge./2. Nao... ja fui longe demais pra parar agora."
+740,2,1,88,"1. Yeah, especially considering I'm the one that did it!/2. Yeah... funny thing, that...","1. E, ainda mais considerando que fui eu que fiz!/2. E... que coisa engracada..."
+741,1,1,3,BYE,
+742,1,1,12,Those people,
+743,1,1,7,Parents,
+744,2,0,90,1. I know what you mean.  I don't belong here./2. No one'll believe that I've got amnesia.,1. Sei o que voce quer dizer.  Eu nao pertenco a este lugar./2. Ninguem vai acreditar que estou com amnesia.
+745,2,1,82,"1. Yeah, believe me, I understand./2. No, but then nothing does make sense here...","1. E, pode acreditar, eu entendo./2. Nao, mas nada faz sentido aqui mesmo..."
+746,2,1,15,Grounded/Escape,
+747,1,1,8,Grounded,
+748,2,1,115,1. Have you heard or seen anything that might help us figure this thing out?/2. What do you think I should do next?,1. Voce ouviu ou viu algo que nos ajude a entender isso?/2. O que acha que eu devo fazer agora?
+749,3,1,20,Escape/Wedding/Lodge,
+750,1,1,7,Wedding,
+751,2,1,114,1. Don't worry about the wedding.  It isn't gonna happen./2. Suddenly the idea of a wedding doesn't seem so bad...,1. Nao se preocupe com o casamento.  Nao vai acontecer./2. De repente a ideia de um casamento nao parece tao ruim...
+752,2,1,12,Lodge/Escape,
+753,1,0,7,Amnesia,
+754,3,1,20,Wedding/Lodge/Escape,
+755,2,1,14,Wedding/Escape,
+756,1,0,5,Lodge,
+757,1,0,19,Women can't join...,
+758,1,1,47,Seem like a bunch of harmless masons to you...?,
+759,1,1,6,Escape,
+760,2,1,87,"1. That's too harsh.  These people are just eccentric./2. Yeah, I think you're right...","1. Isso e duro demais.  Essa gente so e excentrica./2. E, acho que voce tem razao..."
+761,2,1,13,Lodge/Amnesia,
+762,1,1,8,Peephole,
+763,1,1,4,Hole,
+764,1,1,3,Spy,
+765,1,1,7,Spyhole,
+766,1,1,3,BYE,
+767,2,1,91,1. What's the quickest way to the Second Level?/2. What kind of pests are we talking about?,1. Qual o caminho mais rapido pro Segundo Nivel?/2. De que tipo de praga estamos falando?
+768,2,1,44,1. You killed your family?!/2. What is this?,1. Voce matou sua familia?!/2. O que e isso?
+769,4,1,30,Honey/Sacrifice/Pleasure/Wasps,
+770,1,1,3,BYE,
+771,1,0,5,Honey,
+772,1,1,30,The wasp is a joy to behold...,
+773,2,1,15,Wasps/Drawbacks,
+774,1,0,5,Wasps,
+775,1,1,34,...the most relentless of insects.,
+776,2,1,74,1. Yeah?  Well keep them away from innocent children!/2. Wasps disgust me.,1. E?  Pois mantenha elas longe de criancas inocentes!/2. Vespas me dao nojo.
+777,1,1,9,Sacrifice,
+778,1,1,8,Pleasure,
+779,1,1,8,Pleasure,
+780,3,1,24,Wasps/Sacrifice/Pleasure,
+781,1,1,9,Drawbacks,
+782,2,1,18,Sacrifice/Pleasure,
+783,1,0,3,BYE,
+784,1,0,17,START A NEW GAME?,
+785,1,0,3,YES,
+786,1,0,2,NO,
+787,1,0,4,SAVE,
+788,1,0,6,CANCEL,
+789,1,0,19,Pick a game to load,
+790,1,0,20, SOUND FX           ,
+791,1,0,18, MUSIC            ,
+792,1,0,18, GAMMA            ,
+793,1,0,4,TEXT,
+794,1,0,4,GORE,
+795,1,0,10,QUICK TIPS,
+796,1,0,8,PASSWORD,
+797,1,0,2,ON,
+798,1,0,3,OFF,
+799,1,0,16, QUIT HARVESTER?,
+800,1,0,8,NEW GAME,
+801,1,0,9,SAVE GAME,
+802,1,0,9,LOAD GAME,
+803,1,0,7,OPTIONS,
+804,1,0,9,QUIT GAME,
+805,1,0,4,HELP,
+806,1,0,5,CLICK,

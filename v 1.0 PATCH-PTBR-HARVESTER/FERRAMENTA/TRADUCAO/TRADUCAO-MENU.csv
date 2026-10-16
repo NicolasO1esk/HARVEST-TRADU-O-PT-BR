@@ -1,0 +1,19 @@
+﻿Chave,Caracteres,Original,Traducao
+main_menu_1,8,NEW GAME,NOVO JOGO
+main_menu_2,9,SAVE GAME,SALVAR JOGO
+main_menu_3,9,LOAD GAME,CARREGAR JOGO
+main_menu_4,7,OPTIONS,OPCOES
+main_menu_5,4,HELP,AJUDA
+main_menu_6,9,QUIT GAME,SAIR DO JOGO
+options_menu_1,19,SOUND FX           ,EFEITOS SONOROS    
+options_menu_2,14,MUSIC         ,MUSICA        
+options_menu_3,14,GAMMA         ,BRILHO        
+options_menu_4,4,TEXT,TEXTO
+options_menu_5,4,GORE,SANGUE
+options_menu_6,10,QUICK TIPS,DICAS RAPIDAS
+options_menu_7,8,PASSWORD,SENHA
+yes,3,YES,SIM
+no,2,NO,NAO
+click,5,CLICK,CLIQUE
+newgame,14,     NEW GAME?,     NOVO JOGO?
+quitgame,17,  QUIT HARVESTER?,  SAIR DO HARVESTER?
